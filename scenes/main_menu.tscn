@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dxmvijurxqt33"]
+
+[ext_resource type="Script" uid="uid://d2poqyqvqyndk" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://c3ceinawmhewh" path="res://assets/mainMenu-assets/mainMenu-background.png" id="1_l6cm7"]
+
+[node name="MainMenu" type="Node2D" unique_id=538930252]
+script = ExtResource("1_ekxnf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2129313056]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1428222295]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_l6cm7")
+expand_mode = 3
