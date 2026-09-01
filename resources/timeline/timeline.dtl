@@ -1,10 +1,15 @@
 [background arg="res://assets/event-assets/main-story/summoned.jpeg" fade="0.0"]
 join emiya center
-emiya: tes woi
-emiya: njir
-testing
-emiya: oke
-- aaa
-	emiya: apalah
-- bbb
-	emiya: iyah
+emiya: selamat datang pahlawan..
+leave emiya
+dimana aku..
+si- siapa kauu!
+join emiya center
+emiya: aku adalah raja kerajaan ini
+leave emiya
+- apa maksudmu??!! aku dimanaa!!
+	join emiya center
+	emiya: tolong tenangkan dulu dirimu..
+- jadi aku telah terpanggil ke dunia lain ya..
+	join emiya center
+	emiya: ...
