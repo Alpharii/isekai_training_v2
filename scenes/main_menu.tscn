@@ -4,6 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://c3ceinawmhewh" path="res://assets/mainMenu-assets/mainMenu-background.png" id="1_l6cm7"]
 [ext_resource type="Theme" uid="uid://bb3pa286alwu2" path="res://assets/themes.tres" id="2_wu84c"]
 [ext_resource type="Texture2D" uid="uid://dlv57j58u5cs3" path="res://assets/mainMenu-assets/character-picture.png" id="4_8ln24"]
+[ext_resource type="Shader" uid="uid://1efk8vty8x5y" path="res://shaders/gradient.gdshader" id="5_rtw2f"]
+[ext_resource type="Texture2D" uid="uid://cuk76v382l53c" path="res://assets/stats/str.png" id="6_oa1go"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tbmy8"]
+shader = ExtResource("5_rtw2f")
+shader_parameter/warna_atas = Color(1, 1, 1, 1)
+shader_parameter/warna_tengah = Color(1, 1, 0, 1)
+shader_parameter/warna_bawah = Color(0.38039216, 0.45882353, 0, 1)
+shader_parameter/pakai_warna_tiga = true
+shader_parameter/ukuran_label = Vector2(100, 30)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
+corner_radius_bottom_left = 70
 
 [node name="MainMenu" type="Node2D" unique_id=538930252]
 script = ExtResource("1_ekxnf")
@@ -36,32 +49,38 @@ offset_top = 26.0
 offset_right = 615.0
 offset_bottom = 137.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/PlayerInfoBox" unique_id=790732464]
-layout_mode = 2
-theme_override_constants/separation = 20
-
-[node name="PlayerPicture" type="TextureRect" parent="CanvasLayer/Control/TextureRect/PlayerInfoBox/HBoxContainer" unique_id=1503032281]
+[node name="PlayerPicture" type="TextureRect" parent="CanvasLayer/Control/TextureRect/PlayerInfoBox" unique_id=1503032281]
 layout_mode = 2
 texture = ExtResource("4_8ln24")
 expand_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/TextureRect/PlayerInfoBox/HBoxContainer" unique_id=4188506]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/PlayerInfoBox" unique_id=856737160]
 layout_mode = 2
 
-[node name="PlayerName" type="Label" parent="CanvasLayer/Control/TextureRect/PlayerInfoBox/HBoxContainer/VBoxContainer" unique_id=1288058267]
-layout_mode = 2
+[node name="PlayerName" type="Label" parent="CanvasLayer/Control/TextureRect/PlayerInfoBox/Panel" unique_id=1288058267]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 10.0
+offset_right = 184.0
+offset_bottom = 45.0
+theme_override_font_sizes/font_size = 24
 text = "Player Name"
 
-[node name="PlayerInfo" type="Label" parent="CanvasLayer/Control/TextureRect/PlayerInfoBox/HBoxContainer/VBoxContainer" unique_id=1724559766]
-layout_mode = 2
+[node name="PlayerInfo" type="Label" parent="CanvasLayer/Control/TextureRect/PlayerInfoBox/Panel" unique_id=1724559766]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 57.0
+offset_right = 160.0
+offset_bottom = 92.0
+theme_override_font_sizes/font_size = 24
 text = "Player Info"
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/TextureRect" unique_id=758161653]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/TextureRect/PlayerInfoBox/Panel" unique_id=758161653]
 layout_mode = 0
-offset_left = 138.0
-offset_top = 78.0
-offset_right = 488.0
-offset_bottom = 81.0
+offset_left = -4.0
+offset_top = 52.0
+offset_right = 346.0
+offset_bottom = 55.0
 size_flags_vertical = 3
 color = Color(0, 0, 0, 1)
 
@@ -73,13 +92,249 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -450.0
-offset_top = -101.0
+offset_top = -76.0
 offset_right = 450.0
-offset_bottom = -36.0
+offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 0
 
 [node name="NextTurnButton" type="Button" parent="CanvasLayer/Control/TextureRect/NextTurnBox" unique_id=605990593]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Next Turn"
+theme_override_font_sizes/font_size = 30
+text = "Advance"
+
+[node name="StatsContainerBox" type="BoxContainer" parent="CanvasLayer/Control/TextureRect" unique_id=1441105810]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 163.0
+offset_right = 573.0
+offset_bottom = 473.0
+
+[node name="TextureRect" type="ColorRect" parent="CanvasLayer/Control/TextureRect/StatsContainerBox" unique_id=606255995]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.8509804, 0.8509804, 0.8509804, 1)
+
+[node name="BoxContainer2" type="BoxContainer" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect" unique_id=1589699782]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 37.0
+offset_right = 246.0
+offset_bottom = 112.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/BoxContainer2" unique_id=1504752953]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/BoxContainer2/Panel" unique_id=1659507192]
+layout_mode = 0
+offset_right = 167.0
+offset_bottom = 38.0
+color = Color(0.8117647, 0, 0.8784314, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/BoxContainer2/Panel" unique_id=1069515404]
+layout_mode = 0
+offset_top = 38.0
+offset_right = 167.0
+offset_bottom = 73.0
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/BoxContainer2/Panel" unique_id=1590575566]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 42.0
+offset_right = 138.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 18
+text = "1200"
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/BoxContainer2/Panel" unique_id=109113947]
+material = SubResource("ShaderMaterial_tbmy8")
+layout_mode = 0
+offset_left = 20.0
+offset_top = 40.0
+offset_right = 71.0
+offset_bottom = 70.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 20
+text = "SS+"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/BoxContainer2/Panel" unique_id=1564490373]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 5.0
+offset_right = 153.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 18
+text = "Strength"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/BoxContainer2/Panel" unique_id=1318424960]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 3.0
+offset_right = 43.0
+offset_bottom = 34.0
+texture = ExtResource("6_oa1go")
+expand_mode = 2
+
+[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect" unique_id=704733779]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 36.0
+offset_right = 223.0
+offset_bottom = 111.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/BoxContainer" unique_id=393272925]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/BoxContainer/Panel" unique_id=72471882]
+layout_mode = 0
+offset_right = 167.0
+offset_bottom = 38.0
+color = Color(0.8117647, 0, 0.8784314, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/BoxContainer/Panel" unique_id=917177865]
+layout_mode = 0
+offset_top = 38.0
+offset_right = 167.0
+offset_bottom = 73.0
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/BoxContainer/Panel" unique_id=1910186291]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 42.0
+offset_right = 138.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 18
+text = "1200"
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/BoxContainer/Panel" unique_id=1217145230]
+material = SubResource("ShaderMaterial_tbmy8")
+layout_mode = 0
+offset_left = 20.0
+offset_top = 40.0
+offset_right = 71.0
+offset_bottom = 70.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 20
+text = "SS+"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/BoxContainer/Panel" unique_id=1339685080]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 5.0
+offset_right = 153.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 18
+text = "Strength"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/BoxContainer/Panel" unique_id=1804891172]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 3.0
+offset_right = 43.0
+offset_bottom = 34.0
+texture = ExtResource("6_oa1go")
+expand_mode = 2
+
+[node name="BoxContainer3" type="BoxContainer" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect" unique_id=493165496]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 131.0
+offset_right = 57.0
+offset_bottom = 206.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/BoxContainer3" unique_id=1396749050]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/BoxContainer3/Panel" unique_id=1081129860]
+layout_mode = 0
+offset_right = 167.0
+offset_bottom = 38.0
+color = Color(0.8117647, 0, 0.8784314, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/BoxContainer3/Panel" unique_id=463097167]
+layout_mode = 0
+offset_top = 38.0
+offset_right = 167.0
+offset_bottom = 73.0
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/BoxContainer3/Panel" unique_id=649980967]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 42.0
+offset_right = 138.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 18
+text = "1200"
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/BoxContainer3/Panel" unique_id=1975697176]
+material = SubResource("ShaderMaterial_tbmy8")
+layout_mode = 0
+offset_left = 20.0
+offset_top = 40.0
+offset_right = 71.0
+offset_bottom = 70.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 20
+text = "SS+"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/BoxContainer3/Panel" unique_id=357754671]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 5.0
+offset_right = 153.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 18
+text = "Strength"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/BoxContainer3/Panel" unique_id=1766479694]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 3.0
+offset_right = 43.0
+offset_bottom = 34.0
+texture = ExtResource("6_oa1go")
+expand_mode = 2
+
+[node name="ActionButtonsContainer" type="BoxContainer" parent="CanvasLayer/Control/TextureRect" unique_id=1287808426]
+layout_mode = 0
+offset_left = 583.0
+offset_top = 163.0
+offset_right = 1144.0
+offset_bottom = 473.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/TextureRect/ActionButtonsContainer" unique_id=631597819]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.7254902, 0.7254902, 0.7254902, 1)
+
+[node name="DateTimeContainer" type="BoxContainer" parent="CanvasLayer/Control/TextureRect" unique_id=2077960128]
+layout_mode = 0
+offset_left = 611.0
+offset_top = 2.0
+offset_right = 1153.0
+offset_bottom = 75.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/DateTimeContainer" unique_id=1434309948]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_wu84c")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/DateTimeContainer/Panel" unique_id=418412825]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -211.5
+offset_top = -21.5
+offset_right = 245.5
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "01 January,  First Year, 00.00 AM"

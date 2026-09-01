@@ -55,6 +55,6 @@ Button/styles/normal = SubResource("StyleBoxFlat_tc67s")
 Button/styles/pressed = SubResource("StyleBoxFlat_s5src")
 Label/colors/font_color = Color(1, 1, 1, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
-Label/constants/outline_size = 10
+Label/constants/outline_size = 3
 Label/font_sizes/font_size = 32
 Label/fonts/font = ExtResource("1_tc67s")
