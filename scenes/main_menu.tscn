@@ -11,6 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://dpxa8wycu03l5" path="res://assets/stats/mag.png" id="9_rcqid"]
 [ext_resource type="Texture2D" uid="uid://bk3adpum3o2n6" path="res://assets/stats/wis.png" id="10_1ajci"]
 [ext_resource type="Texture2D" uid="uid://hnu1shcu5j77" path="res://assets/stats/char.png" id="11_7b55j"]
+[ext_resource type="Texture2D" uid="uid://btsqrmixksd2r" path="res://assets/mainMenu-assets/Frame 3.png" id="12_flqon"]
+[ext_resource type="Texture2D" uid="uid://bbw0juvbmgjan" path="res://assets/mainMenu-assets/Frame 2.png" id="13_rcqid"]
+[ext_resource type="Texture2D" uid="uid://bqjj6n0vbkvlf" path="res://assets/mainMenu-assets/Frame 3 (1).png" id="14_7b55j"]
+[ext_resource type="Texture2D" uid="uid://bjags8mivn5sh" path="res://assets/mainMenu-assets/Frame 4.png" id="15_5pajh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtw2f"]
 bg_color = Color(0.8117647, 0, 0.8784314, 1)
@@ -32,6 +36,41 @@ shader_parameter/ukuran_label = Vector2(100, 30)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
 corner_radius_bottom_left = 70
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7ex8"]
+bg_color = Color(0, 0, 0, 0.34901962)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ajci"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7b55j"]
+bg_color = Color(0.105882354, 0.7529412, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a8gd2"]
+bg_color = Color(0.83137256, 0.5411765, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hstxw"]
+bg_color = Color(0.8784314, 0.3019608, 0.93333334, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="MainMenu" type="Node2D" unique_id=538930252]
 script = ExtResource("1_ekxnf")
@@ -121,48 +160,55 @@ text = "Advance"
 
 [node name="StatsContainerBox" type="BoxContainer" parent="CanvasLayer/Control/TextureRect" unique_id=1441105810]
 layout_mode = 0
-offset_left = 5.0
-offset_top = 163.0
-offset_right = 573.0
-offset_bottom = 473.0
+offset_left = 24.0
+offset_top = 180.0
+offset_right = 574.0
+offset_bottom = 440.0
 
-[node name="TextureRect" type="ColorRect" parent="CanvasLayer/Control/TextureRect/StatsContainerBox" unique_id=606255995]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/TextureRect/StatsContainerBox" unique_id=606255995]
 layout_mode = 2
 size_flags_horizontal = 3
 color = Color(0.8509804, 0.8509804, 0.8509804, 0)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect" unique_id=1280472609]
-layout_mode = 0
-offset_left = 13.0
-offset_top = 19.0
-offset_right = 564.0
-offset_bottom = 275.0
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect" unique_id=1280472609]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.5
+offset_top = -128.0
+offset_right = 275.5
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/separation = 190
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer" unique_id=1312797175]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer" unique_id=1312797175]
 layout_mode = 2
 theme_override_constants/separation = 90
 
-[node name="StrengthBox" type="BoxContainer" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer" unique_id=1819441106]
+[node name="StrengthBox" type="BoxContainer" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer" unique_id=1819441106]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer/StrengthBox" unique_id=1567431842]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox" unique_id=1567431842]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer/StrengthBox/Panel" unique_id=371123740]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox/Panel" unique_id=371123740]
 layout_mode = 0
 offset_right = 167.0
 offset_bottom = 38.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_rtw2f")
 
-[node name="Panel2" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer/StrengthBox/Panel" unique_id=817012962]
+[node name="Panel2" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox/Panel" unique_id=817012962]
 layout_mode = 0
 offset_top = 38.0
 offset_right = 167.0
 offset_bottom = 73.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_oa1go")
 
-[node name="Label3" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer/StrengthBox/Panel" unique_id=40712525]
+[node name="Label3" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox/Panel" unique_id=40712525]
 layout_mode = 0
 offset_left = 85.0
 offset_top = 42.0
@@ -171,7 +217,7 @@ offset_bottom = 69.0
 theme_override_font_sizes/font_size = 18
 text = "1200"
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer/StrengthBox/Panel" unique_id=2110389811]
+[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox/Panel" unique_id=2110389811]
 material = SubResource("ShaderMaterial_tbmy8")
 layout_mode = 0
 offset_left = 20.0
@@ -183,7 +229,7 @@ theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 20
 text = "SS+"
 
-[node name="Label2" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer/StrengthBox/Panel" unique_id=2136645029]
+[node name="Label2" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox/Panel" unique_id=2136645029]
 layout_mode = 0
 offset_left = 61.0
 offset_top = 6.0
@@ -192,7 +238,7 @@ offset_bottom = 33.0
 theme_override_font_sizes/font_size = 16
 text = "Strength"
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer/StrengthBox/Panel" unique_id=1757008849]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox/Panel" unique_id=1757008849]
 layout_mode = 0
 offset_left = 12.0
 offset_top = 3.0
@@ -201,26 +247,26 @@ offset_bottom = 34.0
 texture = ExtResource("6_oa1go")
 expand_mode = 2
 
-[node name="StrengthBox2" type="BoxContainer" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer" unique_id=423345237]
+[node name="StrengthBox2" type="BoxContainer" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer" unique_id=423345237]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer/StrengthBox2" unique_id=888831680]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox2" unique_id=888831680]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer/StrengthBox2/Panel" unique_id=683274346]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox2/Panel" unique_id=683274346]
 layout_mode = 0
 offset_right = 167.0
 offset_bottom = 38.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_rtw2f")
 
-[node name="Panel2" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer/StrengthBox2/Panel" unique_id=2019814766]
+[node name="Panel2" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox2/Panel" unique_id=2019814766]
 layout_mode = 0
 offset_top = 38.0
 offset_right = 167.0
 offset_bottom = 73.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_oa1go")
 
-[node name="Label3" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer/StrengthBox2/Panel" unique_id=2042258399]
+[node name="Label3" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox2/Panel" unique_id=2042258399]
 layout_mode = 0
 offset_left = 85.0
 offset_top = 42.0
@@ -229,7 +275,7 @@ offset_bottom = 69.0
 theme_override_font_sizes/font_size = 18
 text = "1200"
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer/StrengthBox2/Panel" unique_id=1580573370]
+[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox2/Panel" unique_id=1580573370]
 material = SubResource("ShaderMaterial_tbmy8")
 layout_mode = 0
 offset_left = 20.0
@@ -241,7 +287,7 @@ theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 20
 text = "SS+"
 
-[node name="Label2" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer/StrengthBox2/Panel" unique_id=1977990310]
+[node name="Label2" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox2/Panel" unique_id=1977990310]
 layout_mode = 0
 offset_left = 61.0
 offset_top = 6.0
@@ -250,7 +296,7 @@ offset_bottom = 33.0
 theme_override_font_sizes/font_size = 16
 text = "Stamina"
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer/StrengthBox2/Panel" unique_id=904854414]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox2/Panel" unique_id=904854414]
 layout_mode = 0
 offset_left = 12.0
 offset_top = 3.0
@@ -259,26 +305,26 @@ offset_bottom = 34.0
 texture = ExtResource("7_lgwnu")
 expand_mode = 2
 
-[node name="StrengthBox3" type="BoxContainer" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer" unique_id=1883937383]
+[node name="StrengthBox3" type="BoxContainer" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer" unique_id=1883937383]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer/StrengthBox3" unique_id=693878230]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox3" unique_id=693878230]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer/StrengthBox3/Panel" unique_id=1027423054]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox3/Panel" unique_id=1027423054]
 layout_mode = 0
 offset_right = 167.0
 offset_bottom = 38.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_rtw2f")
 
-[node name="Panel2" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer/StrengthBox3/Panel" unique_id=1852905799]
+[node name="Panel2" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox3/Panel" unique_id=1852905799]
 layout_mode = 0
 offset_top = 38.0
 offset_right = 167.0
 offset_bottom = 73.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_oa1go")
 
-[node name="Label3" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer/StrengthBox3/Panel" unique_id=1044086935]
+[node name="Label3" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox3/Panel" unique_id=1044086935]
 layout_mode = 0
 offset_left = 85.0
 offset_top = 42.0
@@ -287,7 +333,7 @@ offset_bottom = 69.0
 theme_override_font_sizes/font_size = 18
 text = "1200"
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer/StrengthBox3/Panel" unique_id=438990567]
+[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox3/Panel" unique_id=438990567]
 material = SubResource("ShaderMaterial_tbmy8")
 layout_mode = 0
 offset_left = 20.0
@@ -299,7 +345,7 @@ theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 20
 text = "SS+"
 
-[node name="Label2" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer/StrengthBox3/Panel" unique_id=2063592625]
+[node name="Label2" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox3/Panel" unique_id=2063592625]
 layout_mode = 0
 offset_left = 56.0
 offset_top = 6.0
@@ -308,7 +354,7 @@ offset_bottom = 33.0
 theme_override_font_sizes/font_size = 16
 text = "Dexterity"
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer/StrengthBox3/Panel" unique_id=1546874653]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox3/Panel" unique_id=1546874653]
 layout_mode = 0
 offset_left = 12.0
 offset_top = 3.0
@@ -317,30 +363,30 @@ offset_bottom = 34.0
 texture = ExtResource("8_flqon")
 expand_mode = 2
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer" unique_id=368599235]
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer" unique_id=368599235]
 layout_mode = 2
 theme_override_constants/separation = 90
 
-[node name="StrengthBox4" type="BoxContainer" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer2" unique_id=714215595]
+[node name="StrengthBox4" type="BoxContainer" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer2" unique_id=714215595]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer2/StrengthBox4" unique_id=1782472691]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox4" unique_id=1782472691]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer2/StrengthBox4/Panel" unique_id=1717180635]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox4/Panel" unique_id=1717180635]
 layout_mode = 0
 offset_right = 167.0
 offset_bottom = 38.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_rtw2f")
 
-[node name="Panel2" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer2/StrengthBox4/Panel" unique_id=910253778]
+[node name="Panel2" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox4/Panel" unique_id=910253778]
 layout_mode = 0
 offset_top = 38.0
 offset_right = 167.0
 offset_bottom = 73.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_oa1go")
 
-[node name="Label3" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer2/StrengthBox4/Panel" unique_id=1936026190]
+[node name="Label3" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox4/Panel" unique_id=1936026190]
 layout_mode = 0
 offset_left = 85.0
 offset_top = 42.0
@@ -349,7 +395,7 @@ offset_bottom = 69.0
 theme_override_font_sizes/font_size = 18
 text = "1200"
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer2/StrengthBox4/Panel" unique_id=1249085097]
+[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox4/Panel" unique_id=1249085097]
 material = SubResource("ShaderMaterial_tbmy8")
 layout_mode = 0
 offset_left = 20.0
@@ -361,7 +407,7 @@ theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 20
 text = "SS+"
 
-[node name="Label2" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer2/StrengthBox4/Panel" unique_id=824243664]
+[node name="Label2" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox4/Panel" unique_id=824243664]
 layout_mode = 0
 offset_left = 61.0
 offset_top = 6.0
@@ -370,7 +416,7 @@ offset_bottom = 33.0
 theme_override_font_sizes/font_size = 16
 text = "Magic"
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer2/StrengthBox4/Panel" unique_id=1380171777]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox4/Panel" unique_id=1380171777]
 layout_mode = 0
 offset_left = 12.0
 offset_top = 3.0
@@ -379,26 +425,26 @@ offset_bottom = 34.0
 texture = ExtResource("9_rcqid")
 expand_mode = 2
 
-[node name="StrengthBox5" type="BoxContainer" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer2" unique_id=677944953]
+[node name="StrengthBox5" type="BoxContainer" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer2" unique_id=677944953]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer2/StrengthBox5" unique_id=716936508]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox5" unique_id=716936508]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer2/StrengthBox5/Panel" unique_id=1816238427]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox5/Panel" unique_id=1816238427]
 layout_mode = 0
 offset_right = 167.0
 offset_bottom = 38.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_rtw2f")
 
-[node name="Panel2" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer2/StrengthBox5/Panel" unique_id=588844246]
+[node name="Panel2" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox5/Panel" unique_id=588844246]
 layout_mode = 0
 offset_top = 38.0
 offset_right = 167.0
 offset_bottom = 73.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_oa1go")
 
-[node name="Label3" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer2/StrengthBox5/Panel" unique_id=858319745]
+[node name="Label3" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox5/Panel" unique_id=858319745]
 layout_mode = 0
 offset_left = 85.0
 offset_top = 42.0
@@ -407,7 +453,7 @@ offset_bottom = 69.0
 theme_override_font_sizes/font_size = 18
 text = "1200"
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer2/StrengthBox5/Panel" unique_id=349211737]
+[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox5/Panel" unique_id=349211737]
 material = SubResource("ShaderMaterial_tbmy8")
 layout_mode = 0
 offset_left = 20.0
@@ -419,7 +465,7 @@ theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 20
 text = "SS+"
 
-[node name="Label2" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer2/StrengthBox5/Panel" unique_id=1342480187]
+[node name="Label2" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox5/Panel" unique_id=1342480187]
 layout_mode = 0
 offset_left = 62.0
 offset_top = 6.0
@@ -428,7 +474,7 @@ offset_bottom = 33.0
 theme_override_font_sizes/font_size = 16
 text = "Wisdom"
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer2/StrengthBox5/Panel" unique_id=1314874870]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox5/Panel" unique_id=1314874870]
 layout_mode = 0
 offset_left = 12.0
 offset_top = 3.0
@@ -437,26 +483,26 @@ offset_bottom = 34.0
 texture = ExtResource("10_1ajci")
 expand_mode = 2
 
-[node name="StrengthBox6" type="BoxContainer" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer2" unique_id=1578184887]
+[node name="StrengthBox6" type="BoxContainer" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer2" unique_id=1578184887]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer2/StrengthBox6" unique_id=304514001]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox6" unique_id=304514001]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer2/StrengthBox6/Panel" unique_id=528589206]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox6/Panel" unique_id=528589206]
 layout_mode = 0
 offset_right = 167.0
 offset_bottom = 38.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_rtw2f")
 
-[node name="Panel2" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer2/StrengthBox6/Panel" unique_id=64346896]
+[node name="Panel2" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox6/Panel" unique_id=64346896]
 layout_mode = 0
 offset_top = 38.0
 offset_right = 167.0
 offset_bottom = 73.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_oa1go")
 
-[node name="Label3" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer2/StrengthBox6/Panel" unique_id=366232114]
+[node name="Label3" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox6/Panel" unique_id=366232114]
 layout_mode = 0
 offset_left = 85.0
 offset_top = 42.0
@@ -465,7 +511,7 @@ offset_bottom = 69.0
 theme_override_font_sizes/font_size = 18
 text = "1200"
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer2/StrengthBox6/Panel" unique_id=450813040]
+[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox6/Panel" unique_id=450813040]
 material = SubResource("ShaderMaterial_tbmy8")
 layout_mode = 0
 offset_left = 20.0
@@ -477,7 +523,7 @@ theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 20
 text = "SS+"
 
-[node name="Label2" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer2/StrengthBox6/Panel" unique_id=1865069251]
+[node name="Label2" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox6/Panel" unique_id=1865069251]
 layout_mode = 0
 offset_left = 59.0
 offset_top = 6.0
@@ -486,7 +532,7 @@ offset_bottom = 33.0
 theme_override_font_sizes/font_size = 16
 text = "Charisma"
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer2/StrengthBox6/Panel" unique_id=1250931605]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox6/Panel" unique_id=1250931605]
 layout_mode = 0
 offset_left = 12.0
 offset_top = 3.0
@@ -495,30 +541,30 @@ offset_bottom = 34.0
 texture = ExtResource("11_7b55j")
 expand_mode = 2
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer" unique_id=590921509]
+[node name="VBoxContainer3" type="VBoxContainer" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer" unique_id=590921509]
 layout_mode = 2
 theme_override_constants/separation = 90
 
-[node name="StrengthBox7" type="BoxContainer" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer3" unique_id=527976804]
+[node name="StrengthBox7" type="BoxContainer" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer3" unique_id=527976804]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer3/StrengthBox7" unique_id=585682094]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox7" unique_id=585682094]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer3/StrengthBox7/Panel" unique_id=470591366]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox7/Panel" unique_id=470591366]
 layout_mode = 0
 offset_right = 167.0
 offset_bottom = 38.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_rtw2f")
 
-[node name="Panel2" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer3/StrengthBox7/Panel" unique_id=1966416995]
+[node name="Panel2" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox7/Panel" unique_id=1966416995]
 layout_mode = 0
 offset_top = 38.0
 offset_right = 167.0
 offset_bottom = 73.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_oa1go")
 
-[node name="Label3" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer3/StrengthBox7/Panel" unique_id=110250526]
+[node name="Label3" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox7/Panel" unique_id=110250526]
 layout_mode = 0
 offset_left = 85.0
 offset_top = 42.0
@@ -527,7 +573,7 @@ offset_bottom = 69.0
 theme_override_font_sizes/font_size = 18
 text = "1200"
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer3/StrengthBox7/Panel" unique_id=51711693]
+[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox7/Panel" unique_id=51711693]
 material = SubResource("ShaderMaterial_tbmy8")
 layout_mode = 0
 offset_left = 20.0
@@ -539,7 +585,7 @@ theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 20
 text = "SS+"
 
-[node name="Label2" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer3/StrengthBox7/Panel" unique_id=1641360364]
+[node name="Label2" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox7/Panel" unique_id=1641360364]
 layout_mode = 0
 offset_left = 61.0
 offset_top = 6.0
@@ -548,7 +594,7 @@ offset_bottom = 33.0
 theme_override_font_sizes/font_size = 16
 text = "Stealth"
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer3/StrengthBox7/Panel" unique_id=1662393924]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox7/Panel" unique_id=1662393924]
 layout_mode = 0
 offset_left = 12.0
 offset_top = 3.0
@@ -557,26 +603,26 @@ offset_bottom = 34.0
 texture = ExtResource("10_1ajci")
 expand_mode = 2
 
-[node name="StrengthBox8" type="BoxContainer" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer3" unique_id=2091731258]
+[node name="StrengthBox8" type="BoxContainer" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer3" unique_id=2091731258]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer3/StrengthBox8" unique_id=2039315558]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox8" unique_id=2039315558]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer3/StrengthBox8/Panel" unique_id=1472733052]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox8/Panel" unique_id=1472733052]
 layout_mode = 0
 offset_right = 167.0
 offset_bottom = 38.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_rtw2f")
 
-[node name="Panel2" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer3/StrengthBox8/Panel" unique_id=1386654765]
+[node name="Panel2" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox8/Panel" unique_id=1386654765]
 layout_mode = 0
 offset_top = 38.0
 offset_right = 167.0
 offset_bottom = 73.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_oa1go")
 
-[node name="Label3" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer3/StrengthBox8/Panel" unique_id=1943164288]
+[node name="Label3" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox8/Panel" unique_id=1943164288]
 layout_mode = 0
 offset_left = 85.0
 offset_top = 42.0
@@ -585,7 +631,7 @@ offset_bottom = 69.0
 theme_override_font_sizes/font_size = 18
 text = "1200"
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer3/StrengthBox8/Panel" unique_id=1804575521]
+[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox8/Panel" unique_id=1804575521]
 material = SubResource("ShaderMaterial_tbmy8")
 layout_mode = 0
 offset_left = 20.0
@@ -597,7 +643,7 @@ theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 20
 text = "SS+"
 
-[node name="Label2" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer3/StrengthBox8/Panel" unique_id=722375979]
+[node name="Label2" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox8/Panel" unique_id=722375979]
 layout_mode = 0
 offset_left = 52.0
 offset_top = 6.0
@@ -606,7 +652,7 @@ offset_bottom = 33.0
 theme_override_font_sizes/font_size = 16
 text = "Intelligence"
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer3/StrengthBox8/Panel" unique_id=869654501]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox8/Panel" unique_id=869654501]
 layout_mode = 0
 offset_left = 12.0
 offset_top = 3.0
@@ -615,26 +661,26 @@ offset_bottom = 34.0
 texture = ExtResource("9_rcqid")
 expand_mode = 2
 
-[node name="StrengthBox9" type="BoxContainer" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer3" unique_id=3185752]
+[node name="StrengthBox9" type="BoxContainer" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer3" unique_id=3185752]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer3/StrengthBox9" unique_id=1378379087]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox9" unique_id=1378379087]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer3/StrengthBox9/Panel" unique_id=1533234306]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox9/Panel" unique_id=1533234306]
 layout_mode = 0
 offset_right = 167.0
 offset_bottom = 38.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_rtw2f")
 
-[node name="Panel2" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer3/StrengthBox9/Panel" unique_id=1754940347]
+[node name="Panel2" type="Panel" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox9/Panel" unique_id=1754940347]
 layout_mode = 0
 offset_top = 38.0
 offset_right = 167.0
 offset_bottom = 73.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_oa1go")
 
-[node name="Label3" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer3/StrengthBox9/Panel" unique_id=2032177471]
+[node name="Label3" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox9/Panel" unique_id=2032177471]
 layout_mode = 0
 offset_left = 85.0
 offset_top = 42.0
@@ -643,7 +689,7 @@ offset_bottom = 69.0
 theme_override_font_sizes/font_size = 18
 text = "1200"
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer3/StrengthBox9/Panel" unique_id=1475667096]
+[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox9/Panel" unique_id=1475667096]
 material = SubResource("ShaderMaterial_tbmy8")
 layout_mode = 0
 offset_left = 20.0
@@ -655,7 +701,7 @@ theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 20
 text = "SS+"
 
-[node name="Label2" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer3/StrengthBox9/Panel" unique_id=962588947]
+[node name="Label2" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox9/Panel" unique_id=962588947]
 layout_mode = 0
 offset_left = 61.0
 offset_top = 6.0
@@ -664,7 +710,7 @@ offset_bottom = 33.0
 theme_override_font_sizes/font_size = 16
 text = "Agility"
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/TextureRect/HBoxContainer/VBoxContainer3/StrengthBox9/Panel" unique_id=148295428]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox9/Panel" unique_id=148295428]
 layout_mode = 0
 offset_left = 12.0
 offset_top = 3.0
@@ -674,17 +720,71 @@ texture = ExtResource("8_flqon")
 expand_mode = 2
 
 [node name="ActionButtonsContainer" type="BoxContainer" parent="CanvasLayer/Control/TextureRect" unique_id=1287808426]
-visible = false
 layout_mode = 0
-offset_left = 583.0
-offset_top = 163.0
-offset_right = 1144.0
-offset_bottom = 473.0
+offset_left = 590.0
+offset_top = 180.0
+offset_right = 1140.0
+offset_bottom = 440.0
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/TextureRect/ActionButtonsContainer" unique_id=631597819]
 layout_mode = 2
 size_flags_horizontal = 3
-color = Color(0.7254902, 0.7254902, 0.7254902, 1)
+color = Color(0.7254902, 0.7254902, 0.7254902, 0)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/ActionButtonsContainer/ColorRect" unique_id=1739507295]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -262.5
+offset_top = -99.0
+offset_right = 262.5
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/TextureRect/ActionButtonsContainer/ColorRect/HBoxContainer" unique_id=1164338795]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 30
+
+[node name="Skills" type="Button" parent="CanvasLayer/Control/TextureRect/ActionButtonsContainer/ColorRect/HBoxContainer/VBoxContainer" unique_id=319341688]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Skills"
+
+[node name="Items" type="Button" parent="CanvasLayer/Control/TextureRect/ActionButtonsContainer/ColorRect/HBoxContainer/VBoxContainer" unique_id=2119873253]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Items"
+
+[node name="Shop" type="Button" parent="CanvasLayer/Control/TextureRect/ActionButtonsContainer/ColorRect/HBoxContainer/VBoxContainer" unique_id=1365878324]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Shop"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Control/TextureRect/ActionButtonsContainer/ColorRect/HBoxContainer" unique_id=63816273]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 30
+
+[node name="Relationship" type="Button" parent="CanvasLayer/Control/TextureRect/ActionButtonsContainer/ColorRect/HBoxContainer/VBoxContainer2" unique_id=1646092283]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Relationship"
+
+[node name="Equipments" type="Button" parent="CanvasLayer/Control/TextureRect/ActionButtonsContainer/ColorRect/HBoxContainer/VBoxContainer2" unique_id=948809085]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Equipments"
+
+[node name="WorldMap" type="Button" parent="CanvasLayer/Control/TextureRect/ActionButtonsContainer/ColorRect/HBoxContainer/VBoxContainer2" unique_id=1291492716]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "World Map"
 
 [node name="DateTimeContainer" type="BoxContainer" parent="CanvasLayer/Control/TextureRect" unique_id=2077960128]
 layout_mode = 0
@@ -713,5 +813,176 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 24
 text = "01 January,  First Year, 00.00 AM"
+
+[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer/Control/TextureRect" unique_id=232510893]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = -177.0
+offset_right = 500.0
+offset_bottom = -108.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/TextureRect/BoxContainer" unique_id=1727993457]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.7254902, 0.7254902, 0.7254902, 0)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect" unique_id=1926938463]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -488.0
+offset_top = -28.5
+offset_right = 492.0
+offset_bottom = 28.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer" unique_id=1766139314]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_j7ex8")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer/Panel" unique_id=1210740449]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -17.5
+offset_right = 60.0
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer/Panel/HBoxContainer" unique_id=1722722795]
+layout_mode = 2
+texture = ExtResource("12_flqon")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer/Panel/HBoxContainer" unique_id=480010998]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "100"
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer" unique_id=590917110]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_1ajci")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer/Panel2" unique_id=1593394386]
+layout_mode = 0
+offset_right = 172.0
+offset_bottom = 57.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7b55j")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer/Panel2" unique_id=529932754]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.5
+offset_top = -17.5
+offset_right = 77.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer/Panel2/HBoxContainer" unique_id=2120398238]
+layout_mode = 2
+texture = ExtResource("13_rcqid")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer/Panel2/HBoxContainer" unique_id=1821927918]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "70/100"
+
+[node name="Panel3" type="Panel" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer" unique_id=452044868]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_1ajci")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer/Panel3" unique_id=349631445]
+layout_mode = 0
+offset_right = 204.0
+offset_bottom = 57.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_a8gd2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer/Panel3" unique_id=788891350]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.5
+offset_top = -17.5
+offset_right = 77.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer/Panel3/HBoxContainer" unique_id=1347702660]
+layout_mode = 2
+texture = ExtResource("14_7b55j")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer/Panel3/HBoxContainer" unique_id=1788273644]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "70/100"
+
+[node name="Panel4" type="Panel" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer" unique_id=513366213]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_hstxw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer/Panel4" unique_id=1253969629]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.75
+offset_top = -20.5
+offset_right = 89.75
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer/Panel4/HBoxContainer" unique_id=1458521583]
+layout_mode = 2
+texture = ExtResource("15_5pajh")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer/Panel4/HBoxContainer" unique_id=294341043]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Mood"
 
 [connection signal="pressed" from="CanvasLayer/Control/TextureRect/NextTurnBox/NextTurnButton" to="." method="_on_next_turn_button_pressed"]
