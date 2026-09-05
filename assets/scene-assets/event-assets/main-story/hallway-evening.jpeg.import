@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btsqrmixksd2r"
-path="res://.godot/imported/Frame 3.png-65357ca97aa58d983d9733b28bef5118.ctex"
+uid="uid://bq20c7xfbmph3"
+path="res://.godot/imported/hallway-evening.jpeg-a53813a20fdef0664d065d5f10aeedf1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/mainMenu-assets/Frame 3.png"
-dest_files=["res://.godot/imported/Frame 3.png-65357ca97aa58d983d9733b28bef5118.ctex"]
+source_file="res://assets/scene-assets/event-assets/main-story/hallway-evening.jpeg"
+dest_files=["res://.godot/imported/hallway-evening.jpeg-a53813a20fdef0664d065d5f10aeedf1.ctex"]
 
 [params]
 

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dxmvijurxqt33"]
 
 [ext_resource type="Script" uid="uid://d2poqyqvqyndk" path="res://scripts/main_menu.gd" id="1_ekxnf"]
-[ext_resource type="Texture2D" uid="uid://c3ceinawmhewh" path="res://assets/mainMenu-assets/mainMenu-background.png" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://c3ceinawmhewh" path="res://assets/scene-assets/mainMenu-assets/mainMenu-background.png" id="1_l6cm7"]
 [ext_resource type="Theme" uid="uid://bb3pa286alwu2" path="res://assets/themes.tres" id="2_wu84c"]
-[ext_resource type="Texture2D" uid="uid://dlv57j58u5cs3" path="res://assets/mainMenu-assets/character-picture.png" id="4_8ln24"]
+[ext_resource type="Texture2D" uid="uid://dlv57j58u5cs3" path="res://assets/scene-assets/mainMenu-assets/character-picture.png" id="4_8ln24"]
 [ext_resource type="Shader" uid="uid://1efk8vty8x5y" path="res://shaders/gradient.gdshader" id="5_rtw2f"]
 [ext_resource type="Texture2D" uid="uid://cuk76v382l53c" path="res://assets/stats/str.png" id="6_oa1go"]
 [ext_resource type="Texture2D" uid="uid://bqogpvtnx3twr" path="res://assets/stats/end.png" id="7_lgwnu"]
@@ -11,10 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://dpxa8wycu03l5" path="res://assets/stats/mag.png" id="9_rcqid"]
 [ext_resource type="Texture2D" uid="uid://bk3adpum3o2n6" path="res://assets/stats/wis.png" id="10_1ajci"]
 [ext_resource type="Texture2D" uid="uid://hnu1shcu5j77" path="res://assets/stats/char.png" id="11_7b55j"]
-[ext_resource type="Texture2D" uid="uid://btsqrmixksd2r" path="res://assets/mainMenu-assets/Frame 3.png" id="12_flqon"]
-[ext_resource type="Texture2D" uid="uid://bbw0juvbmgjan" path="res://assets/mainMenu-assets/Frame 2.png" id="13_rcqid"]
-[ext_resource type="Texture2D" uid="uid://bqjj6n0vbkvlf" path="res://assets/mainMenu-assets/Frame 3 (1).png" id="14_7b55j"]
-[ext_resource type="Texture2D" uid="uid://bjags8mivn5sh" path="res://assets/mainMenu-assets/Frame 4.png" id="15_5pajh"]
+[ext_resource type="Texture2D" uid="uid://btsqrmixksd2r" path="res://assets/scene-assets/mainMenu-assets/Money.png" id="12_flqon"]
+[ext_resource type="Texture2D" uid="uid://bbw0juvbmgjan" path="res://assets/scene-assets/mainMenu-assets/Energy.png" id="13_rcqid"]
+[ext_resource type="Texture2D" uid="uid://bqjj6n0vbkvlf" path="res://assets/scene-assets/mainMenu-assets/Hunger.png" id="14_7b55j"]
+[ext_resource type="Texture2D" uid="uid://cgliwwdkgkdqx" path="res://assets/scene-assets/mainMenu-assets/Mood.png" id="15_7b55j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtw2f"]
 bg_color = Color(0.8117647, 0, 0.8784314, 1)
@@ -66,7 +66,7 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hstxw"]
-bg_color = Color(0.8784314, 0.3019608, 0.93333334, 1)
+bg_color = Color(0, 0, 0, 0.34901962)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -719,19 +719,19 @@ offset_bottom = 34.0
 texture = ExtResource("8_flqon")
 expand_mode = 2
 
-[node name="ActionButtonsContainer" type="BoxContainer" parent="CanvasLayer/Control/TextureRect" unique_id=1287808426]
+[node name="ActionButtonsBox" type="BoxContainer" parent="CanvasLayer/Control/TextureRect" unique_id=1287808426]
 layout_mode = 0
 offset_left = 590.0
 offset_top = 180.0
 offset_right = 1140.0
 offset_bottom = 440.0
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/TextureRect/ActionButtonsContainer" unique_id=631597819]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/TextureRect/ActionButtonsBox" unique_id=631597819]
 layout_mode = 2
 size_flags_horizontal = 3
 color = Color(0.7254902, 0.7254902, 0.7254902, 0)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/ActionButtonsContainer/ColorRect" unique_id=1739507295]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/ActionButtonsBox/ColorRect" unique_id=1739507295]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -746,59 +746,59 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 30
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/TextureRect/ActionButtonsContainer/ColorRect/HBoxContainer" unique_id=1164338795]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/TextureRect/ActionButtonsBox/ColorRect/HBoxContainer" unique_id=1164338795]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 30
 
-[node name="Skills" type="Button" parent="CanvasLayer/Control/TextureRect/ActionButtonsContainer/ColorRect/HBoxContainer/VBoxContainer" unique_id=319341688]
+[node name="Skills" type="Button" parent="CanvasLayer/Control/TextureRect/ActionButtonsBox/ColorRect/HBoxContainer/VBoxContainer" unique_id=319341688]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Skills"
 
-[node name="Items" type="Button" parent="CanvasLayer/Control/TextureRect/ActionButtonsContainer/ColorRect/HBoxContainer/VBoxContainer" unique_id=2119873253]
+[node name="Items" type="Button" parent="CanvasLayer/Control/TextureRect/ActionButtonsBox/ColorRect/HBoxContainer/VBoxContainer" unique_id=2119873253]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Items"
 
-[node name="Shop" type="Button" parent="CanvasLayer/Control/TextureRect/ActionButtonsContainer/ColorRect/HBoxContainer/VBoxContainer" unique_id=1365878324]
+[node name="Shop" type="Button" parent="CanvasLayer/Control/TextureRect/ActionButtonsBox/ColorRect/HBoxContainer/VBoxContainer" unique_id=1365878324]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Shop"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Control/TextureRect/ActionButtonsContainer/ColorRect/HBoxContainer" unique_id=63816273]
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Control/TextureRect/ActionButtonsBox/ColorRect/HBoxContainer" unique_id=63816273]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 30
 
-[node name="Relationship" type="Button" parent="CanvasLayer/Control/TextureRect/ActionButtonsContainer/ColorRect/HBoxContainer/VBoxContainer2" unique_id=1646092283]
+[node name="Relationship" type="Button" parent="CanvasLayer/Control/TextureRect/ActionButtonsBox/ColorRect/HBoxContainer/VBoxContainer2" unique_id=1646092283]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Relationship"
 
-[node name="Equipments" type="Button" parent="CanvasLayer/Control/TextureRect/ActionButtonsContainer/ColorRect/HBoxContainer/VBoxContainer2" unique_id=948809085]
+[node name="Equipments" type="Button" parent="CanvasLayer/Control/TextureRect/ActionButtonsBox/ColorRect/HBoxContainer/VBoxContainer2" unique_id=948809085]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Equipments"
 
-[node name="WorldMap" type="Button" parent="CanvasLayer/Control/TextureRect/ActionButtonsContainer/ColorRect/HBoxContainer/VBoxContainer2" unique_id=1291492716]
+[node name="WorldMap" type="Button" parent="CanvasLayer/Control/TextureRect/ActionButtonsBox/ColorRect/HBoxContainer/VBoxContainer2" unique_id=1291492716]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "World Map"
 
-[node name="DateTimeContainer" type="BoxContainer" parent="CanvasLayer/Control/TextureRect" unique_id=2077960128]
+[node name="DateTimeBox" type="BoxContainer" parent="CanvasLayer/Control/TextureRect" unique_id=2077960128]
 layout_mode = 0
 offset_left = 611.0
 offset_top = 2.0
 offset_right = 1153.0
 offset_bottom = 75.0
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/DateTimeContainer" unique_id=1434309948]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/DateTimeBox" unique_id=1434309948]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_wu84c")
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/DateTimeContainer/Panel" unique_id=418412825]
+[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/DateTimeBox/Panel" unique_id=418412825]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -814,7 +814,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 24
 text = "01 January,  First Year, 00.00 AM"
 
-[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer/Control/TextureRect" unique_id=232510893]
+[node name="ConditionInfoBox" type="BoxContainer" parent="CanvasLayer/Control/TextureRect" unique_id=232510893]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -828,12 +828,12 @@ offset_bottom = -108.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/TextureRect/BoxContainer" unique_id=1727993457]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox" unique_id=1727993457]
 layout_mode = 2
 size_flags_horizontal = 3
 color = Color(0.7254902, 0.7254902, 0.7254902, 0)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect" unique_id=1926938463]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect" unique_id=1926938463]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -848,13 +848,13 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer" unique_id=1766139314]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer" unique_id=1766139314]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_j7ex8")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer/Panel" unique_id=1210740449]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/Panel" unique_id=1210740449]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -869,29 +869,29 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer/Panel/HBoxContainer" unique_id=1722722795]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/Panel/HBoxContainer" unique_id=1722722795]
 layout_mode = 2
 texture = ExtResource("12_flqon")
 expand_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer/Panel/HBoxContainer" unique_id=480010998]
+[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/Panel/HBoxContainer" unique_id=480010998]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "100"
 
-[node name="Panel2" type="Panel" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer" unique_id=590917110]
+[node name="Panel2" type="Panel" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer" unique_id=590917110]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_1ajci")
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer/Panel2" unique_id=1593394386]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/Panel2" unique_id=1593394386]
 layout_mode = 0
 offset_right = 172.0
 offset_bottom = 57.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_7b55j")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer/Panel2" unique_id=529932754]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/Panel2" unique_id=529932754]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -906,29 +906,29 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer/Panel2/HBoxContainer" unique_id=2120398238]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/Panel2/HBoxContainer" unique_id=2120398238]
 layout_mode = 2
 texture = ExtResource("13_rcqid")
 expand_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer/Panel2/HBoxContainer" unique_id=1821927918]
+[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/Panel2/HBoxContainer" unique_id=1821927918]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "70/100"
 
-[node name="Panel3" type="Panel" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer" unique_id=452044868]
+[node name="Panel3" type="Panel" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer" unique_id=452044868]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_1ajci")
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer/Panel3" unique_id=349631445]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/Panel3" unique_id=349631445]
 layout_mode = 0
 offset_right = 204.0
 offset_bottom = 57.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_a8gd2")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer/Panel3" unique_id=788891350]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/Panel3" unique_id=788891350]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -943,23 +943,23 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer/Panel3/HBoxContainer" unique_id=1347702660]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/Panel3/HBoxContainer" unique_id=1347702660]
 layout_mode = 2
 texture = ExtResource("14_7b55j")
 expand_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer/Panel3/HBoxContainer" unique_id=1788273644]
+[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/Panel3/HBoxContainer" unique_id=1788273644]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "70/100"
 
-[node name="Panel4" type="Panel" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer" unique_id=513366213]
+[node name="Panel4" type="Panel" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer" unique_id=513366213]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_hstxw")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer/Panel4" unique_id=1253969629]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/Panel4" unique_id=1253969629]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -975,12 +975,12 @@ grow_vertical = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer/Panel4/HBoxContainer" unique_id=1458521583]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/Panel4/HBoxContainer" unique_id=1458521583]
 layout_mode = 2
-texture = ExtResource("15_5pajh")
+texture = ExtResource("15_7b55j")
 expand_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/BoxContainer/ColorRect/HBoxContainer/Panel4/HBoxContainer" unique_id=294341043]
+[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/Panel4/HBoxContainer" unique_id=294341043]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Mood"

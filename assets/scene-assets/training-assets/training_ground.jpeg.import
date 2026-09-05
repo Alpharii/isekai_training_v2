@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bachjf81lt2c4"
-path="res://.godot/imported/hallway-night.jpeg-f9e4a8f3724f8306478ed8c344b5e728.ctex"
+uid="uid://bjmmiyebf4osk"
+path="res://.godot/imported/training_ground.jpeg-fdb41c1abd3fca68039fbfdc20164678.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/event-assets/main-story/hallway-night.jpeg"
-dest_files=["res://.godot/imported/hallway-night.jpeg-f9e4a8f3724f8306478ed8c344b5e728.ctex"]
+source_file="res://assets/scene-assets/training-assets/training_ground.jpeg"
+dest_files=["res://.godot/imported/training_ground.jpeg-fdb41c1abd3fca68039fbfdc20164678.ctex"]
 
 [params]
 

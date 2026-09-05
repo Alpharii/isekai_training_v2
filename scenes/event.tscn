@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bjl4654nffw5l"]
 
-[ext_resource type="Texture2D" uid="uid://bbngofdlt3tww" path="res://assets/event-assets/main-story/summoned.jpeg" id="1_y83ao"]
+[ext_resource type="Texture2D" uid="uid://bbngofdlt3tww" path="res://assets/scene-assets/event-assets/main-story/summoned.jpeg" id="1_y83ao"]
 
 [node name="Event" type="Node2D" unique_id=266848654]
 

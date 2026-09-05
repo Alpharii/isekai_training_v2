@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bhcoifjac3oko"]
 
 [ext_resource type="Script" uid="uid://cosqxso7ugxpd" path="res://scripts/start_menu.gd" id="1_m7x51"]
-[ext_resource type="Texture2D" uid="uid://dr5slwlk0b5rs" path="res://assets/startMenu-assets/startMenu.png" id="1_ouf4f"]
+[ext_resource type="Texture2D" uid="uid://dr5slwlk0b5rs" path="res://assets/scene-assets/startMenu-assets/startMenu.png" id="1_ouf4f"]
 [ext_resource type="Theme" uid="uid://bb3pa286alwu2" path="res://assets/themes.tres" id="2_thu50"]
 
 [node name="StartMenu" type="Node2D" unique_id=165134161]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbngofdlt3tww"
-path="res://.godot/imported/summoned.jpeg-c6c81b6743594f02d57a16b530b3e69a.ctex"
+uid="uid://c3ceinawmhewh"
+path="res://.godot/imported/mainMenu-background.png-5eb1069633bac02be12259439a412a04.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/event-assets/main-story/summoned.jpeg"
-dest_files=["res://.godot/imported/summoned.jpeg-c6c81b6743594f02d57a16b530b3e69a.ctex"]
+source_file="res://assets/scene-assets/mainMenu-assets/mainMenu-background.png"
+dest_files=["res://.godot/imported/mainMenu-background.png-5eb1069633bac02be12259439a412a04.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bq20c7xfbmph3"
-path="res://.godot/imported/hallway-evening.jpeg-4268870608071d45bb867ff89995b03d.ctex"
+uid="uid://bqjj6n0vbkvlf"
+path="res://.godot/imported/Hunger.png-085c8fd30d31cefb0c1715e4a0031dd4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/event-assets/main-story/hallway-evening.jpeg"
-dest_files=["res://.godot/imported/hallway-evening.jpeg-4268870608071d45bb867ff89995b03d.ctex"]
+source_file="res://assets/scene-assets/mainMenu-assets/Hunger.png"
+dest_files=["res://.godot/imported/Hunger.png-085c8fd30d31cefb0c1715e4a0031dd4.ctex"]
 
 [params]
 

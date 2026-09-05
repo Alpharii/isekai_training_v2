@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duybbd6kvsgg7"
-path="res://.godot/imported/grunge-paper-background 2.png-391eb8f4c34b303996947af3a3521cc4.ctex"
+uid="uid://baape1n35y3ed"
+path="res://.godot/imported/home.png-1e3990252f32bdec92d6f6e4ac009056.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/mainMenu-assets/grunge-paper-background 2.png"
-dest_files=["res://.godot/imported/grunge-paper-background 2.png-391eb8f4c34b303996947af3a3521cc4.ctex"]
+source_file="res://assets/scene-assets/training-assets/home.png"
+dest_files=["res://.godot/imported/home.png-1e3990252f32bdec92d6f6e4ac009056.ctex"]
 
 [params]
 

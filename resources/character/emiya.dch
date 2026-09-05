@@ -19,7 +19,7 @@
 &"portraits": {
 "Emiya": {
 "export_overrides": {
-"image": "\"res://assets/event-assets/main-story/emiya.png\""
+"image": "\"res://assets/scene-assets/event-assets/main-story/emiya.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
