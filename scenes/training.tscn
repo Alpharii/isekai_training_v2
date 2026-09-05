@@ -3,6 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://bjmmiyebf4osk" path="res://assets/scene-assets/training-assets/training_ground.jpeg" id="1_v2b7k"]
 [ext_resource type="Texture2D" uid="uid://baape1n35y3ed" path="res://assets/scene-assets/training-assets/home.png" id="2_j5vqi"]
 [ext_resource type="Texture2D" uid="uid://bfnoss8c6j0yj" path="res://assets/scene-assets/training-assets/setting.png" id="3_oxk6x"]
+[ext_resource type="Texture2D" uid="uid://c8omhpjtqmqxt" path="res://assets/scene-assets/training-assets/character.png" id="4_j5vqi"]
+[ext_resource type="Texture2D" uid="uid://bbw0juvbmgjan" path="res://assets/scene-assets/mainMenu-assets/Energy.png" id="5_ooikh"]
+[ext_resource type="Texture2D" uid="uid://bqjj6n0vbkvlf" path="res://assets/scene-assets/mainMenu-assets/Hunger.png" id="6_c5wwr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ooikh"]
 bg_color = Color(1, 1, 1, 0.62352943)
@@ -17,6 +20,39 @@ corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j5vqi"]
+bg_color = Color(0, 0, 0, 0.5921569)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nvloa"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtug4"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4cjul"]
+bg_color = Color(0.105882354, 0.7529412, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c03ob"]
+bg_color = Color(0.83137256, 0.5411765, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ndv2e"]
+bg_color = Color(0, 0, 0, 0.5921569)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ihin"]
+bg_color = Color(0, 0, 0, 0.5921569)
 
 [node name="Training" type="Node2D" unique_id=1387971966]
 
@@ -49,19 +85,19 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.50980395)
 
-[node name="HomeContainer" type="BoxContainer" parent="CanvasLayer/Control/ColorRect" unique_id=1010297346]
+[node name="HomeBox" type="BoxContainer" parent="CanvasLayer/Control/ColorRect" unique_id=1010297346]
 layout_mode = 0
 offset_left = 30.0
 offset_top = 550.0
 offset_right = 100.0
 offset_bottom = 620.0
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/HomeContainer" unique_id=1271631427]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/HomeBox" unique_id=1271631427]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_ooikh")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/ColorRect/HomeContainer/Panel" unique_id=2012058651]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/ColorRect/HomeBox/Panel" unique_id=2012058651]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -73,24 +109,24 @@ theme_override_constants/margin_top = 6
 theme_override_constants/margin_right = 6
 theme_override_constants/margin_bottom = 6
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/ColorRect/HomeContainer/Panel/MarginContainer" unique_id=168928422]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/ColorRect/HomeBox/Panel/MarginContainer" unique_id=168928422]
 layout_mode = 2
 texture = ExtResource("2_j5vqi")
 expand_mode = 2
 
-[node name="SettingContainer" type="BoxContainer" parent="CanvasLayer/Control/ColorRect" unique_id=22339232]
+[node name="SettingBox" type="BoxContainer" parent="CanvasLayer/Control/ColorRect" unique_id=22339232]
 layout_mode = 0
 offset_left = 1050.0
 offset_top = 550.0
 offset_right = 1120.0
 offset_bottom = 620.0
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/SettingContainer" unique_id=2117397839]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/SettingBox" unique_id=2117397839]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_c5wwr")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/ColorRect/SettingContainer/Panel" unique_id=1931132125]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/ColorRect/SettingBox/Panel" unique_id=1931132125]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -102,7 +138,174 @@ theme_override_constants/margin_top = 6
 theme_override_constants/margin_right = 6
 theme_override_constants/margin_bottom = 6
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/ColorRect/SettingContainer/Panel/MarginContainer" unique_id=245171157]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/ColorRect/SettingBox/Panel/MarginContainer" unique_id=245171157]
 layout_mode = 2
 texture = ExtResource("3_oxk6x")
 expand_mode = 2
+
+[node name="CharacterBox" type="BoxContainer" parent="CanvasLayer/Control/ColorRect" unique_id=539774249]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -206.0
+offset_right = 206.0
+offset_bottom = 1093.5
+grow_horizontal = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/ColorRect/CharacterBox" unique_id=1744756379]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_j5vqi")
+stretch_mode = 4
+
+[node name="TrainingBox" type="BoxContainer" parent="CanvasLayer/Control/ColorRect" unique_id=2114467380]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -422.5
+offset_top = -224.0
+offset_right = 422.5
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/TrainingBox" unique_id=1046443910]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_j5vqi")
+
+[node name="EnergyBox" type="BoxContainer" parent="CanvasLayer/Control/ColorRect" unique_id=19159404]
+layout_mode = 0
+offset_left = 1007.0
+offset_top = 54.0
+offset_right = 1136.0
+offset_bottom = 521.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/EnergyBox" unique_id=1148595046]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_nvloa")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/ColorRect/EnergyBox/Panel" unique_id=581081629]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer/Control/ColorRect/EnergyBox/Panel/HBoxContainer" unique_id=1518695899]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Container" type="Panel" parent="CanvasLayer/Control/ColorRect/EnergyBox/Panel/HBoxContainer/BoxContainer" unique_id=1015466181]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/EnergyBox/Panel/HBoxContainer/BoxContainer/Container" unique_id=808419632]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_xtug4")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/EnergyBox/Panel/HBoxContainer/BoxContainer/Container/Panel" unique_id=43629666]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4cjul")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/ColorRect/EnergyBox/Panel/HBoxContainer/BoxContainer/Container" unique_id=1025204709]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -19.0
+offset_top = -49.0
+offset_right = 19.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("5_ooikh")
+expand_mode = 2
+
+[node name="BoxContainer2" type="BoxContainer" parent="CanvasLayer/Control/ColorRect/EnergyBox/Panel/HBoxContainer" unique_id=1276499968]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Container" type="Panel" parent="CanvasLayer/Control/ColorRect/EnergyBox/Panel/HBoxContainer/BoxContainer2" unique_id=1850751562]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/EnergyBox/Panel/HBoxContainer/BoxContainer2/Container" unique_id=1136219995]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_xtug4")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/EnergyBox/Panel/HBoxContainer/BoxContainer2/Container/Panel" unique_id=714386468]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_c03ob")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/ColorRect/EnergyBox/Panel/HBoxContainer/BoxContainer2/Container" unique_id=69697237]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -19.0
+offset_top = -49.0
+offset_right = 19.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("6_c5wwr")
+expand_mode = 2
+
+[node name="DateTimeBox" type="BoxContainer" parent="CanvasLayer/Control/ColorRect" unique_id=1598175185]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 51.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/DateTimeBox" unique_id=1461795080]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ndv2e")
+
+[node name="StastBox" type="BoxContainer" parent="CanvasLayer/Control/ColorRect" unique_id=1091369130]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 84.0
+offset_right = 332.0
+offset_bottom = 413.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/StastBox" unique_id=1715873494]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_8ihin")
