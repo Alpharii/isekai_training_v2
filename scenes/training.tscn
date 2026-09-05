@@ -1,11 +1,16 @@
 [gd_scene format=3 uid="uid://crmim7m700nga"]
 
+[ext_resource type="Theme" uid="uid://bb3pa286alwu2" path="res://assets/themes.tres" id="1_c03ob"]
 [ext_resource type="Texture2D" uid="uid://bjmmiyebf4osk" path="res://assets/scene-assets/training-assets/training_ground.jpeg" id="1_v2b7k"]
 [ext_resource type="Texture2D" uid="uid://baape1n35y3ed" path="res://assets/scene-assets/training-assets/home.png" id="2_j5vqi"]
 [ext_resource type="Texture2D" uid="uid://bfnoss8c6j0yj" path="res://assets/scene-assets/training-assets/setting.png" id="3_oxk6x"]
 [ext_resource type="Texture2D" uid="uid://c8omhpjtqmqxt" path="res://assets/scene-assets/training-assets/character.png" id="4_j5vqi"]
 [ext_resource type="Texture2D" uid="uid://bbw0juvbmgjan" path="res://assets/scene-assets/mainMenu-assets/Energy.png" id="5_ooikh"]
 [ext_resource type="Texture2D" uid="uid://bqjj6n0vbkvlf" path="res://assets/scene-assets/mainMenu-assets/Hunger.png" id="6_c5wwr"]
+[ext_resource type="Texture2D" uid="uid://btsqrmixksd2r" path="res://assets/scene-assets/mainMenu-assets/Money.png" id="7_nvloa"]
+[ext_resource type="Shader" uid="uid://1efk8vty8x5y" path="res://shaders/gradient.gdshader" id="8_ndv2e"]
+[ext_resource type="Texture2D" uid="uid://cgliwwdkgkdqx" path="res://assets/scene-assets/mainMenu-assets/Mood.png" id="8_xtug4"]
+[ext_resource type="Texture2D" uid="uid://cuk76v382l53c" path="res://assets/stats/str.png" id="9_8ihin"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ooikh"]
 bg_color = Color(1, 1, 1, 0.62352943)
@@ -48,11 +53,37 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jhlec"]
+bg_color = Color(0.8117647, 0, 0.8784314, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qujom"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j5onp"]
+shader = ExtResource("8_ndv2e")
+shader_parameter/warna_atas = Color(1, 1, 1, 1)
+shader_parameter/warna_tengah = Color(1, 1, 0, 1)
+shader_parameter/warna_bawah = Color(0.38039216, 0.45882353, 0, 1)
+shader_parameter/pakai_warna_tiga = true
+shader_parameter/ukuran_label = Vector2(100, 30)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ndv2e"]
-bg_color = Color(0, 0, 0, 0.5921569)
+bg_color = Color(0, 0, 0, 0.34901962)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4njoh"]
+bg_color = Color(0, 0, 0, 0.47843137)
+corner_radius_bottom_right = 50
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ihin"]
-bg_color = Color(0, 0, 0, 0.5921569)
+bg_color = Color(0, 0, 0, 0.7607843)
 
 [node name="Training" type="Node2D" unique_id=1387971966]
 
@@ -65,6 +96,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_c03ob")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control" unique_id=67681918]
 layout_mode = 1
@@ -181,7 +213,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_j5vqi")
 [node name="EnergyBox" type="BoxContainer" parent="CanvasLayer/Control/ColorRect" unique_id=19159404]
 layout_mode = 0
 offset_left = 1007.0
-offset_top = 54.0
+offset_top = 1.0
 offset_right = 1136.0
 offset_bottom = 521.0
 
@@ -195,7 +227,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 3.0
+offset_left = 2.0
+offset_top = 11.0
+offset_right = 5.0
+offset_bottom = 11.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
@@ -223,7 +258,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 72.0
+offset_top = 252.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_4cjul")
@@ -267,7 +302,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 220.0
+offset_top = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_c03ob")
@@ -288,24 +323,697 @@ grow_vertical = 0
 texture = ExtResource("6_c5wwr")
 expand_mode = 2
 
-[node name="DateTimeBox" type="BoxContainer" parent="CanvasLayer/Control/ColorRect" unique_id=1598175185]
-layout_mode = 0
-offset_right = 250.0
-offset_bottom = 51.0
-
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/DateTimeBox" unique_id=1461795080]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_ndv2e")
-
 [node name="StastBox" type="BoxContainer" parent="CanvasLayer/Control/ColorRect" unique_id=1091369130]
 layout_mode = 0
-offset_left = 13.0
-offset_top = 84.0
-offset_right = 332.0
-offset_bottom = 413.0
+offset_left = 11.0
+offset_top = 140.0
+offset_right = 370.0
+offset_bottom = 337.0
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/StastBox" unique_id=1715873494]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/ColorRect/StastBox" unique_id=1922934388]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.8509804, 0.8509804, 0.8509804, 0)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect" unique_id=1907417591]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 4.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 120
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer" unique_id=1560267837]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="StrengthBox" type="BoxContainer" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer" unique_id=1411232239]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox" unique_id=2095635483]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox/Panel" unique_id=134411061]
+layout_mode = 0
+offset_top = 14.0
+offset_right = 107.0
+offset_bottom = 38.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jhlec")
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox/Panel" unique_id=1285780944]
+layout_mode = 0
+offset_top = 38.0
+offset_right = 107.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qujom")
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox/Panel" unique_id=1029418247]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 42.0
+offset_right = 87.0
+offset_bottom = 59.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 11
+text = "1200"
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox/Panel" unique_id=391504839]
+material = SubResource("ShaderMaterial_j5onp")
+layout_mode = 0
+offset_left = 8.0
+offset_top = 39.0
+offset_right = 44.0
+offset_bottom = 61.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 14
+text = "SS+"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox/Panel" unique_id=951663252]
+layout_mode = 0
+offset_left = 35.5
+offset_top = 17.5
+offset_right = 92.5
+offset_bottom = 34.5
+theme_override_font_sizes/font_size = 11
+text = "Strength"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox/Panel" unique_id=598262161]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 18.0
+offset_right = 27.0
+offset_bottom = 35.0
+texture = ExtResource("9_8ihin")
+expand_mode = 2
+
+[node name="StrengthBox2" type="BoxContainer" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer" unique_id=56707325]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox2" unique_id=961233253]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox2/Panel" unique_id=1730943529]
+layout_mode = 0
+offset_top = 14.0
+offset_right = 107.0
+offset_bottom = 38.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jhlec")
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox2/Panel" unique_id=787418246]
+layout_mode = 0
+offset_top = 38.0
+offset_right = 107.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qujom")
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox2/Panel" unique_id=1678959233]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 42.0
+offset_right = 87.0
+offset_bottom = 59.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 11
+text = "1200"
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox2/Panel" unique_id=1915955712]
+material = SubResource("ShaderMaterial_j5onp")
+layout_mode = 0
+offset_left = 8.0
+offset_top = 39.0
+offset_right = 44.0
+offset_bottom = 61.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 14
+text = "SS+"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox2/Panel" unique_id=762381274]
+layout_mode = 0
+offset_left = 35.5
+offset_top = 17.5
+offset_right = 92.5
+offset_bottom = 34.5
+theme_override_font_sizes/font_size = 11
+text = "Strength"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox2/Panel" unique_id=876267448]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 18.0
+offset_right = 27.0
+offset_bottom = 35.0
+texture = ExtResource("9_8ihin")
+expand_mode = 2
+
+[node name="StrengthBox3" type="BoxContainer" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer" unique_id=1621977215]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox3" unique_id=1414878570]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox3/Panel" unique_id=901336710]
+layout_mode = 0
+offset_top = 14.0
+offset_right = 107.0
+offset_bottom = 38.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jhlec")
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox3/Panel" unique_id=1758725072]
+layout_mode = 0
+offset_top = 38.0
+offset_right = 107.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qujom")
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox3/Panel" unique_id=418848153]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 42.0
+offset_right = 87.0
+offset_bottom = 59.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 11
+text = "1200"
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox3/Panel" unique_id=1956714237]
+material = SubResource("ShaderMaterial_j5onp")
+layout_mode = 0
+offset_left = 8.0
+offset_top = 39.0
+offset_right = 44.0
+offset_bottom = 61.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 14
+text = "SS+"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox3/Panel" unique_id=1199764137]
+layout_mode = 0
+offset_left = 35.5
+offset_top = 17.5
+offset_right = 92.5
+offset_bottom = 34.5
+theme_override_font_sizes/font_size = 11
+text = "Strength"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox3/Panel" unique_id=1407060048]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 18.0
+offset_right = 27.0
+offset_bottom = 35.0
+texture = ExtResource("9_8ihin")
+expand_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer" unique_id=1992431794]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="StrengthBox" type="BoxContainer" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer2" unique_id=1863794233]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox" unique_id=940506387]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox/Panel" unique_id=888468674]
+layout_mode = 0
+offset_top = 14.0
+offset_right = 107.0
+offset_bottom = 38.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jhlec")
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox/Panel" unique_id=656016923]
+layout_mode = 0
+offset_top = 38.0
+offset_right = 107.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qujom")
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox/Panel" unique_id=1366764803]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 42.0
+offset_right = 87.0
+offset_bottom = 59.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 11
+text = "1200"
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox/Panel" unique_id=1247852105]
+material = SubResource("ShaderMaterial_j5onp")
+layout_mode = 0
+offset_left = 8.0
+offset_top = 39.0
+offset_right = 44.0
+offset_bottom = 61.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 14
+text = "SS+"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox/Panel" unique_id=1631769016]
+layout_mode = 0
+offset_left = 35.5
+offset_top = 17.5
+offset_right = 92.5
+offset_bottom = 34.5
+theme_override_font_sizes/font_size = 11
+text = "Strength"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox/Panel" unique_id=730419697]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 18.0
+offset_right = 27.0
+offset_bottom = 35.0
+texture = ExtResource("9_8ihin")
+expand_mode = 2
+
+[node name="StrengthBox2" type="BoxContainer" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer2" unique_id=606519924]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox2" unique_id=1401958399]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox2/Panel" unique_id=1211055287]
+layout_mode = 0
+offset_top = 14.0
+offset_right = 107.0
+offset_bottom = 38.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jhlec")
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox2/Panel" unique_id=193010142]
+layout_mode = 0
+offset_top = 38.0
+offset_right = 107.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qujom")
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox2/Panel" unique_id=1826048071]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 42.0
+offset_right = 87.0
+offset_bottom = 59.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 11
+text = "1200"
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox2/Panel" unique_id=1927172138]
+material = SubResource("ShaderMaterial_j5onp")
+layout_mode = 0
+offset_left = 8.0
+offset_top = 39.0
+offset_right = 44.0
+offset_bottom = 61.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 14
+text = "SS+"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox2/Panel" unique_id=533188555]
+layout_mode = 0
+offset_left = 35.5
+offset_top = 17.5
+offset_right = 92.5
+offset_bottom = 34.5
+theme_override_font_sizes/font_size = 11
+text = "Strength"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox2/Panel" unique_id=88021772]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 18.0
+offset_right = 27.0
+offset_bottom = 35.0
+texture = ExtResource("9_8ihin")
+expand_mode = 2
+
+[node name="StrengthBox3" type="BoxContainer" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer2" unique_id=1779904035]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox3" unique_id=1323727503]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox3/Panel" unique_id=1977747987]
+layout_mode = 0
+offset_top = 14.0
+offset_right = 107.0
+offset_bottom = 38.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jhlec")
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox3/Panel" unique_id=615549524]
+layout_mode = 0
+offset_top = 38.0
+offset_right = 107.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qujom")
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox3/Panel" unique_id=363798052]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 42.0
+offset_right = 87.0
+offset_bottom = 59.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 11
+text = "1200"
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox3/Panel" unique_id=1107423416]
+material = SubResource("ShaderMaterial_j5onp")
+layout_mode = 0
+offset_left = 8.0
+offset_top = 39.0
+offset_right = 44.0
+offset_bottom = 61.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 14
+text = "SS+"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox3/Panel" unique_id=1919688508]
+layout_mode = 0
+offset_left = 35.5
+offset_top = 17.5
+offset_right = 92.5
+offset_bottom = 34.5
+theme_override_font_sizes/font_size = 11
+text = "Strength"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer2/StrengthBox3/Panel" unique_id=1626129323]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 18.0
+offset_right = 27.0
+offset_bottom = 35.0
+texture = ExtResource("9_8ihin")
+expand_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer" unique_id=1322275344]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="StrengthBox" type="BoxContainer" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer3" unique_id=1123587017]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox" unique_id=294860348]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox/Panel" unique_id=451066413]
+layout_mode = 0
+offset_top = 14.0
+offset_right = 107.0
+offset_bottom = 38.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jhlec")
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox/Panel" unique_id=347518985]
+layout_mode = 0
+offset_top = 38.0
+offset_right = 107.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qujom")
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox/Panel" unique_id=729179679]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 42.0
+offset_right = 87.0
+offset_bottom = 59.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 11
+text = "1200"
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox/Panel" unique_id=1711423215]
+material = SubResource("ShaderMaterial_j5onp")
+layout_mode = 0
+offset_left = 8.0
+offset_top = 39.0
+offset_right = 44.0
+offset_bottom = 61.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 14
+text = "SS+"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox/Panel" unique_id=1586573889]
+layout_mode = 0
+offset_left = 35.5
+offset_top = 17.5
+offset_right = 92.5
+offset_bottom = 34.5
+theme_override_font_sizes/font_size = 11
+text = "Strength"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox/Panel" unique_id=1590527044]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 18.0
+offset_right = 27.0
+offset_bottom = 35.0
+texture = ExtResource("9_8ihin")
+expand_mode = 2
+
+[node name="StrengthBox2" type="BoxContainer" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer3" unique_id=1310659184]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox2" unique_id=531967416]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox2/Panel" unique_id=316937754]
+layout_mode = 0
+offset_top = 14.0
+offset_right = 107.0
+offset_bottom = 38.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jhlec")
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox2/Panel" unique_id=1915313639]
+layout_mode = 0
+offset_top = 38.0
+offset_right = 107.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qujom")
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox2/Panel" unique_id=1233809892]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 42.0
+offset_right = 87.0
+offset_bottom = 59.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 11
+text = "1200"
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox2/Panel" unique_id=2076276971]
+material = SubResource("ShaderMaterial_j5onp")
+layout_mode = 0
+offset_left = 8.0
+offset_top = 39.0
+offset_right = 44.0
+offset_bottom = 61.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 14
+text = "SS+"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox2/Panel" unique_id=610429259]
+layout_mode = 0
+offset_left = 35.5
+offset_top = 17.5
+offset_right = 92.5
+offset_bottom = 34.5
+theme_override_font_sizes/font_size = 11
+text = "Strength"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox2/Panel" unique_id=1437453557]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 18.0
+offset_right = 27.0
+offset_bottom = 35.0
+texture = ExtResource("9_8ihin")
+expand_mode = 2
+
+[node name="StrengthBox3" type="BoxContainer" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer3" unique_id=1414574570]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox3" unique_id=2002385305]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox3/Panel" unique_id=772371445]
+layout_mode = 0
+offset_top = 14.0
+offset_right = 107.0
+offset_bottom = 38.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jhlec")
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox3/Panel" unique_id=2001045880]
+layout_mode = 0
+offset_top = 38.0
+offset_right = 107.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qujom")
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox3/Panel" unique_id=266712430]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 42.0
+offset_right = 87.0
+offset_bottom = 59.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 11
+text = "1200"
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox3/Panel" unique_id=849399127]
+material = SubResource("ShaderMaterial_j5onp")
+layout_mode = 0
+offset_left = 8.0
+offset_top = 39.0
+offset_right = 44.0
+offset_bottom = 61.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 14
+text = "SS+"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox3/Panel" unique_id=1319698286]
+layout_mode = 0
+offset_left = 35.5
+offset_top = 17.5
+offset_right = 92.5
+offset_bottom = 34.5
+theme_override_font_sizes/font_size = 11
+text = "Strength"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/ColorRect/StastBox/ColorRect/HBoxContainer/VBoxContainer3/StrengthBox3/Panel" unique_id=1181242811]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 18.0
+offset_right = 27.0
+offset_bottom = 35.0
+texture = ExtResource("9_8ihin")
+expand_mode = 2
+
+[node name="MoneyBox" type="BoxContainer" parent="CanvasLayer/Control/ColorRect" unique_id=1883167882]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 75.0
+offset_right = 175.0
+offset_bottom = 120.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/MoneyBox" unique_id=908406130]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ndv2e")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/ColorRect/MoneyBox/Panel" unique_id=1763925199]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.5
+offset_top = -15.0
+offset_right = 62.5
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/ColorRect/MoneyBox/Panel/HBoxContainer" unique_id=2105060158]
+layout_mode = 2
+texture = ExtResource("7_nvloa")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/ColorRect/MoneyBox/Panel/HBoxContainer" unique_id=1313765897]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "100"
+
+[node name="MoodBox" type="BoxContainer" parent="CanvasLayer/Control/ColorRect" unique_id=458742289]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 75.0
+offset_right = 345.0
+offset_bottom = 120.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/MoodBox" unique_id=1417383730]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ndv2e")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/ColorRect/MoodBox/Panel" unique_id=2143642450]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.5
+offset_top = -15.0
+offset_right = 62.5
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/ColorRect/MoodBox/Panel/HBoxContainer" unique_id=2003335285]
+layout_mode = 2
+texture = ExtResource("8_xtug4")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/ColorRect/MoodBox/Panel/HBoxContainer" unique_id=1061756263]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Mood"
+
+[node name="DateTimeBox" type="BoxContainer" parent="CanvasLayer/Control/ColorRect" unique_id=708457883]
+layout_mode = 1
+offset_right = 280.0
+offset_bottom = 63.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/DateTimeBox" unique_id=1630617885]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_4njoh")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/ColorRect/DateTimeBox/Panel" unique_id=1639014117]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.5
+offset_top = -24.5
+offset_right = 114.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "01 January,  First Year,
+ 00.00 AM"
+horizontal_alignment = 1
+
+[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer/Control/ColorRect" unique_id=1201165306]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 342.0
+offset_right = 365.0
+offset_bottom = 410.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/BoxContainer" unique_id=1009326996]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_8ihin")
