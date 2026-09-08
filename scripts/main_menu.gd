@@ -18,6 +18,8 @@ func update_player_ui() -> void:
 		"Lv. %d\nEXP: %d"
 		% [player.level, player.experience]
 	)
+	
+	# Player Stats-------------
 
 	# =========================
 	# Strength
@@ -81,7 +83,7 @@ func update_player_ui() -> void:
 
 		
 	# =========================
-	# intelligence
+	# Intelligence
 	# =========================
 	var intelligence_panel = $CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer3/IntelligenceBox/Panel
 
@@ -90,13 +92,38 @@ func update_player_ui() -> void:
 
 		
 	# =========================
-	# agility
+	# Agility
 	# =========================
 	var agility_panel = $CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer3/AgilityBox/Panel
 
 	agility_panel.get_node("Label3").text = str(player.agility)
 	agility_panel.get_node("Label").text = get_stat_rank(player.agility)
 	
+	# Player Stats ------------
+	
+	# =========================
+	# Player Condition Info
+	# =========================
+	
+	var condition_tree = $CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer
+	
+	condition_tree.get_node("MoneyPanel/HBoxContainer/Label").text = str(player.money)
+	condition_tree.get_node("MoodPanel/HBoxContainer/Label").text = get_mood(player.mood)
+	
+	var energy_bar = condition_tree.get_node("EnergyPanel/ProgressBar")
+	var hunger_bar = condition_tree.get_node("HungerPanel/ProgressBar")
+	
+	# Update nilai Progress Bar
+	energy_bar.max_value = player.max_energy
+	energy_bar.value = player.energy
+	hunger_bar.max_value = player.max_hungry
+	hunger_bar.value = player.hungry
+
+	# Update teks Label (contoh: "50 / 100")
+	energy_bar.get_node("HBoxContainer/Label").text = "%d / %d" % [player.energy, player.max_energy]
+	
+	# Jika hunger_bar juga punya struktur Label yang sama:
+	hunger_bar.get_node("HBoxContainer/Label").text = "%d / %d" % [player.hungry, player.max_hungry]
 
 func get_stat_rank(value: int) -> String:
 	if value >= 1150:
@@ -132,6 +159,19 @@ func get_stat_rank(value: int) -> String:
 	else:
 		return "F"
 
+func get_mood(value: int) -> String:
+	if value == 5:
+		return "Great"
+	if value == 4:
+		return "Good"
+	if value == 3:
+		return "Normal"
+	if value == 2:
+		return "Bad"
+	if value == 1:
+		return "Awful"
+	else:
+		return "Normal"
 
 func _on_next_turn_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/training.tscn")

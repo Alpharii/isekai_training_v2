@@ -23,10 +23,10 @@ class_name PlayerData
 @export_category("Resources")
 @export var money: int = 10
 @export var max_energy: int = 100
-@export var energy: int = 100
+@export var energy: int = 90
 @export var max_hungry: int = 100
-@export var hungry: int = 100
-@export var mood: int = 5
+@export var hungry: int = 80
+@export var mood: int = 3
 
 @export_category("Progress")
 @export var last_completed_timeline: String = ""

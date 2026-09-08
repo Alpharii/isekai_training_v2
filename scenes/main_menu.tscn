@@ -35,6 +35,7 @@ shader_parameter/pakai_warna_tiga = true
 shader_parameter/ukuran_label = Vector2(100, 30)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
+bg_color = Color(0, 0, 0, 0.47843137)
 corner_radius_bottom_left = 70
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7ex8"]
@@ -52,6 +53,13 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7b55j"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pajh"]
 bg_color = Color(0.105882354, 0.7529412, 0, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
@@ -848,13 +856,13 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer" unique_id=1766139314]
+[node name="MoneyPanel" type="Panel" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer" unique_id=1766139314]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_j7ex8")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/Panel" unique_id=1210740449]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/MoneyPanel" unique_id=1210740449]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -869,29 +877,35 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/Panel/HBoxContainer" unique_id=1722722795]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/MoneyPanel/HBoxContainer" unique_id=1722722795]
 layout_mode = 2
 texture = ExtResource("12_flqon")
 expand_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/Panel/HBoxContainer" unique_id=480010998]
+[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/MoneyPanel/HBoxContainer" unique_id=480010998]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "100"
 
-[node name="Panel2" type="Panel" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer" unique_id=590917110]
+[node name="EnergyPanel" type="Panel" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer" unique_id=590917110]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_1ajci")
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/Panel2" unique_id=1593394386]
-layout_mode = 0
-offset_right = 172.0
-offset_bottom = 57.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_7b55j")
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/EnergyPanel" unique_id=1702103855]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_7b55j")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5pajh")
+value = 50.0
+show_percentage = false
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/Panel2" unique_id=529932754]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/EnergyPanel/ProgressBar" unique_id=962482408]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -905,30 +919,39 @@ offset_bottom = 17.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
+alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/Panel2/HBoxContainer" unique_id=2120398238]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/EnergyPanel/ProgressBar/HBoxContainer" unique_id=2112125437]
 layout_mode = 2
 texture = ExtResource("13_rcqid")
 expand_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/Panel2/HBoxContainer" unique_id=1821927918]
+[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/EnergyPanel/ProgressBar/HBoxContainer" unique_id=350459800]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "70/100"
+text = "50/100"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Panel3" type="Panel" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer" unique_id=452044868]
+[node name="HungerPanel" type="Panel" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer" unique_id=452044868]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_1ajci")
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/Panel3" unique_id=349631445]
-layout_mode = 0
-offset_right = 204.0
-offset_bottom = 57.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_a8gd2")
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/HungerPanel" unique_id=523375528]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_7b55j")
+theme_override_styles/fill = SubResource("StyleBoxFlat_a8gd2")
+value = 50.0
+show_percentage = false
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/Panel3" unique_id=788891350]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/HungerPanel/ProgressBar" unique_id=190572359]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -942,24 +965,27 @@ offset_bottom = 17.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
+alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/Panel3/HBoxContainer" unique_id=1347702660]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/HungerPanel/ProgressBar/HBoxContainer" unique_id=1218936043]
 layout_mode = 2
 texture = ExtResource("14_7b55j")
 expand_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/Panel3/HBoxContainer" unique_id=1788273644]
+[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/HungerPanel/ProgressBar/HBoxContainer" unique_id=1014175067]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "70/100"
+text = "50/100"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Panel4" type="Panel" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer" unique_id=513366213]
+[node name="MoodPanel" type="Panel" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer" unique_id=513366213]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_hstxw")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/Panel4" unique_id=1253969629]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/MoodPanel" unique_id=1253969629]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -975,12 +1001,12 @@ grow_vertical = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/Panel4/HBoxContainer" unique_id=1458521583]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/MoodPanel/HBoxContainer" unique_id=1458521583]
 layout_mode = 2
 texture = ExtResource("15_7b55j")
 expand_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/Panel4/HBoxContainer" unique_id=294341043]
+[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/ConditionInfoBox/ColorRect/HBoxContainer/MoodPanel/HBoxContainer" unique_id=294341043]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Mood"
