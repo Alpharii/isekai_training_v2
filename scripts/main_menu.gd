@@ -27,7 +27,7 @@ func update_player_ui() -> void:
 	var strength_panel = $CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox/Panel
 
 	strength_panel.get_node("Label3").text = str(player.strength)
-	strength_panel.get_node("Label").text = get_stat_rank(player.strength)
+	StatRankHelper.set_rank(strength_panel.get_node("Label"), player.strength)
 
 	# =========================
 	# Stamina
@@ -35,15 +35,15 @@ func update_player_ui() -> void:
 	var stamina_panel = $CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer/StaminaBox/Panel
 
 	stamina_panel.get_node("Label3").text = str(player.stamina)
-	stamina_panel.get_node("Label").text = get_stat_rank(player.stamina)
-	
+	StatRankHelper.set_rank(stamina_panel.get_node("Label"), player.stamina)
+
 	# =========================
 	# Dexterity
 	# =========================
 	var dexterity_panel = $CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer/DexterityBox/Panel
 
 	dexterity_panel.get_node("Label3").text = str(player.dexterity)
-	dexterity_panel.get_node("Label").text = get_stat_rank(player.dexterity)
+	StatRankHelper.set_rank(dexterity_panel.get_node("Label"), player.dexterity)
 
 		
 	# =========================
@@ -52,7 +52,7 @@ func update_player_ui() -> void:
 	var magic_panel = $CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer2/MagicBox/Panel
 
 	magic_panel.get_node("Label3").text = str(player.magic)
-	magic_panel.get_node("Label").text = get_stat_rank(player.magic)
+	StatRankHelper.set_rank(magic_panel.get_node("Label"), player.magic)
 
 		
 	# =========================
@@ -61,7 +61,7 @@ func update_player_ui() -> void:
 	var wisdom_panel = $CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer2/WisdomBox/Panel
 
 	wisdom_panel.get_node("Label3").text = str(player.wisdom)
-	wisdom_panel.get_node("Label").text = get_stat_rank(player.wisdom)
+	StatRankHelper.set_rank(wisdom_panel.get_node("Label"), player.wisdom)
 
 		
 	# =========================
@@ -70,7 +70,7 @@ func update_player_ui() -> void:
 	var charisma_panel = $CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer2/CharismaBox/Panel
 
 	charisma_panel.get_node("Label3").text = str(player.charisma)
-	charisma_panel.get_node("Label").text = get_stat_rank(player.charisma)
+	StatRankHelper.set_rank(charisma_panel.get_node("Label"), player.charisma)
 
 		
 	# =========================
@@ -79,7 +79,7 @@ func update_player_ui() -> void:
 	var stealth_panel = $CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer3/StealthBox/Panel
 
 	stealth_panel.get_node("Label3").text = str(player.stealth)
-	stealth_panel.get_node("Label").text = get_stat_rank(player.stealth)
+	StatRankHelper.set_rank(stealth_panel.get_node("Label"), player.stealth)
 
 		
 	# =========================
@@ -88,7 +88,7 @@ func update_player_ui() -> void:
 	var intelligence_panel = $CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer3/IntelligenceBox/Panel
 
 	intelligence_panel.get_node("Label3").text = str(player.intelligence)
-	intelligence_panel.get_node("Label").text = get_stat_rank(player.intelligence)
+	StatRankHelper.set_rank(intelligence_panel.get_node("Label"), player.intelligence)
 
 		
 	# =========================
@@ -97,8 +97,8 @@ func update_player_ui() -> void:
 	var agility_panel = $CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer3/AgilityBox/Panel
 
 	agility_panel.get_node("Label3").text = str(player.agility)
-	agility_panel.get_node("Label").text = get_stat_rank(player.agility)
-	
+	StatRankHelper.set_rank(agility_panel.get_node("Label"), player.agility)
+
 	# Player Stats ------------
 	
 	# =========================
@@ -124,40 +124,6 @@ func update_player_ui() -> void:
 	
 	# Jika hunger_bar juga punya struktur Label yang sama:
 	hunger_bar.get_node("HBoxContainer/Label").text = "%d / %d" % [player.hungry, player.max_hungry]
-
-func get_stat_rank(value: int) -> String:
-	if value >= 1150:
-		return "SS+"
-	elif value >= 1100:
-		return "SS"
-	elif value >= 1050:
-		return "S+"
-	elif value >= 1000:
-		return "S"
-	elif value >= 950:
-		return "A+"
-	elif value >= 900:
-		return "A"
-	elif value >= 850:
-		return "B+"
-	elif value >= 800:
-		return "B"
-	elif value >= 700:
-		return "C+"
-	elif value >= 600:
-		return "C"
-	elif value >= 500:
-		return "D+"
-	elif value >= 400:
-		return "D"
-	elif value >= 300:
-		return "E+"
-	elif value >= 200:
-		return "E"
-	elif value >= 100:
-		return "F+"
-	else:
-		return "F"
 
 func get_mood(value: int) -> String:
 	if value == 5:

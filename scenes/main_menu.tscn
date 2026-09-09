@@ -26,13 +26,77 @@ bg_color = Color(1, 1, 1, 1)
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tbmy8"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7b55j"]
 shader = ExtResource("5_rtw2f")
 shader_parameter/warna_atas = Color(1, 1, 1, 1)
-shader_parameter/warna_tengah = Color(1, 1, 0, 1)
-shader_parameter/warna_bawah = Color(0.38039216, 0.45882353, 0, 1)
+shader_parameter/warna_tengah = Color(1, 0.84, 0, 1)
+shader_parameter/warna_bawah = Color(0.5, 0.35, 0, 1)
 shader_parameter/pakai_warna_tiga = true
-shader_parameter/ukuran_label = Vector2(100, 30)
+shader_parameter/ukuran_label = Vector2(100, 50)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5pajh"]
+shader = ExtResource("5_rtw2f")
+shader_parameter/warna_atas = Color(1, 1, 1, 1)
+shader_parameter/warna_tengah = Color(1, 0.84, 0, 1)
+shader_parameter/warna_bawah = Color(0.5, 0.35, 0, 1)
+shader_parameter/pakai_warna_tiga = true
+shader_parameter/ukuran_label = Vector2(100, 50)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j7ex8"]
+shader = ExtResource("5_rtw2f")
+shader_parameter/warna_atas = Color(1, 1, 1, 1)
+shader_parameter/warna_tengah = Color(1, 0.84, 0, 1)
+shader_parameter/warna_bawah = Color(0.5, 0.35, 0, 1)
+shader_parameter/pakai_warna_tiga = true
+shader_parameter/ukuran_label = Vector2(100, 50)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a8gd2"]
+shader = ExtResource("5_rtw2f")
+shader_parameter/warna_atas = Color(1, 1, 1, 1)
+shader_parameter/warna_tengah = Color(1, 0.84, 0, 1)
+shader_parameter/warna_bawah = Color(0.5, 0.35, 0, 1)
+shader_parameter/pakai_warna_tiga = true
+shader_parameter/ukuran_label = Vector2(100, 50)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8egab"]
+shader = ExtResource("5_rtw2f")
+shader_parameter/warna_atas = Color(1, 1, 1, 1)
+shader_parameter/warna_tengah = Color(1, 0.84, 0, 1)
+shader_parameter/warna_bawah = Color(0.5, 0.35, 0, 1)
+shader_parameter/pakai_warna_tiga = true
+shader_parameter/ukuran_label = Vector2(100, 50)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gw5y6"]
+shader = ExtResource("5_rtw2f")
+shader_parameter/warna_atas = Color(1, 1, 1, 1)
+shader_parameter/warna_tengah = Color(1, 0.84, 0, 1)
+shader_parameter/warna_bawah = Color(0.5, 0.35, 0, 1)
+shader_parameter/pakai_warna_tiga = true
+shader_parameter/ukuran_label = Vector2(100, 50)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hstxw"]
+shader = ExtResource("5_rtw2f")
+shader_parameter/warna_atas = Color(1, 1, 1, 1)
+shader_parameter/warna_tengah = Color(1, 0.84, 0, 1)
+shader_parameter/warna_bawah = Color(0.5, 0.35, 0, 1)
+shader_parameter/pakai_warna_tiga = true
+shader_parameter/ukuran_label = Vector2(100, 50)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_svtp6"]
+shader = ExtResource("5_rtw2f")
+shader_parameter/warna_atas = Color(1, 1, 1, 1)
+shader_parameter/warna_tengah = Color(1, 0.84, 0, 1)
+shader_parameter/warna_bawah = Color(0.5, 0.35, 0, 1)
+shader_parameter/pakai_warna_tiga = true
+shader_parameter/ukuran_label = Vector2(100, 50)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1dfpl"]
+shader = ExtResource("5_rtw2f")
+shader_parameter/warna_atas = Color(1, 1, 1, 1)
+shader_parameter/warna_tengah = Color(1, 0.84, 0, 1)
+shader_parameter/warna_bawah = Color(0.5, 0.35, 0, 1)
+shader_parameter/pakai_warna_tiga = true
+shader_parameter/ukuran_label = Vector2(100, 50)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
 bg_color = Color(0, 0, 0, 0.47843137)
@@ -226,7 +290,7 @@ theme_override_font_sizes/font_size = 18
 text = "1200"
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer/StrengthBox/Panel" unique_id=2110389811]
-material = SubResource("ShaderMaterial_tbmy8")
+material = SubResource("ShaderMaterial_7b55j")
 layout_mode = 0
 offset_left = 20.0
 offset_top = 40.0
@@ -284,7 +348,7 @@ theme_override_font_sizes/font_size = 18
 text = "1200"
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer/StaminaBox/Panel" unique_id=1580573370]
-material = SubResource("ShaderMaterial_tbmy8")
+material = SubResource("ShaderMaterial_5pajh")
 layout_mode = 0
 offset_left = 20.0
 offset_top = 40.0
@@ -342,7 +406,7 @@ theme_override_font_sizes/font_size = 18
 text = "1200"
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer/DexterityBox/Panel" unique_id=438990567]
-material = SubResource("ShaderMaterial_tbmy8")
+material = SubResource("ShaderMaterial_j7ex8")
 layout_mode = 0
 offset_left = 20.0
 offset_top = 40.0
@@ -404,7 +468,7 @@ theme_override_font_sizes/font_size = 18
 text = "1200"
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer2/MagicBox/Panel" unique_id=1249085097]
-material = SubResource("ShaderMaterial_tbmy8")
+material = SubResource("ShaderMaterial_a8gd2")
 layout_mode = 0
 offset_left = 20.0
 offset_top = 40.0
@@ -462,7 +526,7 @@ theme_override_font_sizes/font_size = 18
 text = "1200"
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer2/WisdomBox/Panel" unique_id=349211737]
-material = SubResource("ShaderMaterial_tbmy8")
+material = SubResource("ShaderMaterial_8egab")
 layout_mode = 0
 offset_left = 20.0
 offset_top = 40.0
@@ -520,7 +584,7 @@ theme_override_font_sizes/font_size = 18
 text = "1200"
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer2/CharismaBox/Panel" unique_id=450813040]
-material = SubResource("ShaderMaterial_tbmy8")
+material = SubResource("ShaderMaterial_gw5y6")
 layout_mode = 0
 offset_left = 20.0
 offset_top = 40.0
@@ -582,7 +646,7 @@ theme_override_font_sizes/font_size = 18
 text = "1200"
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer3/StealthBox/Panel" unique_id=51711693]
-material = SubResource("ShaderMaterial_tbmy8")
+material = SubResource("ShaderMaterial_hstxw")
 layout_mode = 0
 offset_left = 20.0
 offset_top = 40.0
@@ -640,7 +704,7 @@ theme_override_font_sizes/font_size = 18
 text = "1200"
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer3/IntelligenceBox/Panel" unique_id=1804575521]
-material = SubResource("ShaderMaterial_tbmy8")
+material = SubResource("ShaderMaterial_svtp6")
 layout_mode = 0
 offset_left = 20.0
 offset_top = 40.0
@@ -698,7 +762,7 @@ theme_override_font_sizes/font_size = 18
 text = "1200"
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/StatsContainerBox/ColorRect/HBoxContainer/VBoxContainer3/AgilityBox/Panel" unique_id=1475667096]
-material = SubResource("ShaderMaterial_tbmy8")
+material = SubResource("ShaderMaterial_1dfpl")
 layout_mode = 0
 offset_left = 20.0
 offset_top = 40.0
