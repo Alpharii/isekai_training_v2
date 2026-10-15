@@ -10,18 +10,18 @@ class_name PlayerData
 @export var hp: int = 100
 @export var mp: int = 50
 
-@export var strength: int = 1200
-@export var stamina: int = 100
-@export var dexterity: int = 900
-@export var magic: int = 300
-@export var wisdom: int = 200
-@export var charisma: int = 100
-@export var stealth: int = 900
-@export var intelligence: int = 1100
-@export var agility: int = 1200
+@export var strength: int = 10
+@export var stamina: int = 10
+@export var dexterity: int = 10
+@export var magic: int = 10
+@export var wisdom: int = 10
+@export var charisma: int = 10
+@export var stealth: int = 10
+@export var intelligence: int = 10
+@export var agility: int = 10
 
 @export_category("Resources")
-@export var money: int = 10
+@export var money: int = 100
 @export var max_energy: int = 100
 @export var energy: int = 90
 @export var max_hungry: int = 100
