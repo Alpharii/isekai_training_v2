@@ -123,17 +123,18 @@ func update_player_ui() -> void:
 	money_container.get_node("Label").text = str(player.money)
 	mood_container.get_node("Label").text = get_mood(player.mood)
 	
-	#var energy_bar = condition_tree.get_node("EnergyPanel/ProgressBar")
-	#var hunger_bar = condition_tree.get_node("HungerPanel/ProgressBar")
+	var condition_tree = $CanvasLayer/Control/ColorRect/ConditionBox/Panel/HBoxContainer
+	var energy_bar = condition_tree.get_node("EnergyBox/EnergyContainer/ProgressBar")
+	var hunger_bar = condition_tree.get_node("HungryBox/HungryContainer/ProgressBar")
 
 	## Update nilai Progress Bar
-	#energy_bar.max_value = player.max_energy
-	#energy_bar.value = player.energy
-	#hunger_bar.max_value = player.max_hungry
-	#hunger_bar.value = player.hungry
+	energy_bar.max_value = player.max_energy
+	energy_bar.value = player.energy
+	hunger_bar.max_value = player.max_hungry
+	hunger_bar.value = player.hungry
+	
 
-	## Update teks Label (contoh: "50 / 100")
-	#energy_bar.get_node("HBoxContainer/Label").text = "%d / %d" % [player.energy, player.max_energy]
-	#
-	## Jika hunger_bar juga punya struktur Label yang sama:
-	#hunger_bar.get_node("HBoxContainer/Label").text = "%d / %d" % [player.hungry, player.max_hungry]
+@onready var main_action_panel = %MainActionContainer
+
+func _on_training_pressed() -> void:
+	main_action_panel.visible = false;

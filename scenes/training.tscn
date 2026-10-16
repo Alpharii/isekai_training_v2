@@ -5,10 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://bjmmiyebf4osk" path="res://assets/scene-assets/training-assets/training_ground.jpeg" id="1_v2b7k"]
 [ext_resource type="Texture2D" uid="uid://baape1n35y3ed" path="res://assets/scene-assets/training-assets/home.png" id="2_j5vqi"]
 [ext_resource type="Texture2D" uid="uid://bfnoss8c6j0yj" path="res://assets/scene-assets/training-assets/setting.png" id="3_oxk6x"]
-[ext_resource type="Texture2D" uid="uid://c8omhpjtqmqxt" path="res://assets/scene-assets/training-assets/character.png" id="4_j5vqi"]
+[ext_resource type="Texture2D" uid="uid://bxxgya0skrohq" path="res://assets/scene-assets/training-assets/character.png" id="4_j5vqi"]
 [ext_resource type="Texture2D" uid="uid://bbw0juvbmgjan" path="res://assets/scene-assets/mainMenu-assets/Energy.png" id="5_ooikh"]
-[ext_resource type="Texture2D" uid="uid://bqjj6n0vbkvlf" path="res://assets/scene-assets/mainMenu-assets/Hunger.png" id="6_c5wwr"]
 [ext_resource type="Texture2D" uid="uid://btsqrmixksd2r" path="res://assets/scene-assets/mainMenu-assets/Money.png" id="7_nvloa"]
+[ext_resource type="Texture2D" uid="uid://cfvsb88cv6h4d" path="res://assets/Frame 3 (1).png" id="8_j5onp"]
 [ext_resource type="Shader" uid="uid://1efk8vty8x5y" path="res://shaders/gradient.gdshader" id="8_ndv2e"]
 [ext_resource type="Texture2D" uid="uid://cgliwwdkgkdqx" path="res://assets/scene-assets/mainMenu-assets/Mood.png" id="8_xtug4"]
 [ext_resource type="Texture2D" uid="uid://cuk76v382l53c" path="res://assets/stats/str.png" id="9_8ihin"]
@@ -33,33 +33,74 @@ corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j5vqi"]
-bg_color = Color(0, 0, 0, 0.5921569)
+bg_color = Color(0, 0, 0, 0.3647059)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j5onp"]
+bg_color = Color(0, 0.9529412, 0.105882354, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4ky0"]
+bg_color = Color(0, 0.52156866, 0.105882354, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r8gha"]
+bg_color = Color(0, 0.75686276, 0.105882354, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nvloa"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtug4"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xnrx1"]
 bg_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4cjul"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5mtl"]
 bg_color = Color(0.105882354, 0.7529412, 0, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
-shadow_size = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c03ob"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oiq5e"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_206hl"]
 bg_color = Color(0.83137256, 0.5411765, 0, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
-shadow_size = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jhlec"]
 bg_color = Color(0.8117647, 0, 0.8784314, 1)
@@ -189,18 +230,19 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -206.0
-offset_right = 206.0
-offset_bottom = 1093.5
+offset_left = -261.5
+offset_top = 29.0
+offset_right = 261.5
+offset_bottom = 911.4436
 grow_horizontal = 2
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/ColorRect/CharacterBox" unique_id=1744756379]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/ColorRect/CharacterBox" unique_id=2083372304]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("4_j5vqi")
-stretch_mode = 4
+expand_mode = 4
 
-[node name="TrainingBox" type="BoxContainer" parent="CanvasLayer/Control/ColorRect" unique_id=2114467380]
+[node name="ActionBox" type="BoxContainer" parent="CanvasLayer/Control/ColorRect" unique_id=2114467380]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -214,122 +256,242 @@ offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/TrainingBox" unique_id=1046443910]
+[node name="MainActionPanel" type="Panel" parent="CanvasLayer/Control/ColorRect/ActionBox" unique_id=1046443910]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_j5vqi")
 
-[node name="EnergyBox" type="BoxContainer" parent="CanvasLayer/Control/ColorRect" unique_id=19159404]
-layout_mode = 0
-offset_left = 1007.0
-offset_top = 1.0
-offset_right = 1136.0
-offset_bottom = 521.0
+[node name="MainActionContainer" type="MarginContainer" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel" unique_id=1107772352]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/EnergyBox" unique_id=1148595046]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/MainActionContainer" unique_id=1055437377]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/MainActionContainer/VBoxContainer" unique_id=812664139]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/MainActionContainer/VBoxContainer/MarginContainer" unique_id=1171605358]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="RestButton" type="BoxContainer" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/MainActionContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1805061511]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/MainActionContainer/VBoxContainer/MarginContainer/HBoxContainer/RestButton" unique_id=1679867822]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_styles/normal = SubResource("StyleBoxFlat_j5onp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u4ky0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_r8gha")
+text = "Rest"
+
+[node name="TrainingButton" type="BoxContainer" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/MainActionContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1649333355]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/MainActionContainer/VBoxContainer/MarginContainer/HBoxContainer/TrainingButton" unique_id=260974252]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_styles/normal = SubResource("StyleBoxFlat_j5onp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u4ky0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_r8gha")
+text = "Training"
+
+[node name="InteractButton" type="BoxContainer" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/MainActionContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1799925096]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/MainActionContainer/VBoxContainer/MarginContainer/HBoxContainer/InteractButton" unique_id=1825018492]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_styles/normal = SubResource("StyleBoxFlat_j5onp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u4ky0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_r8gha")
+text = "Interact"
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/MainActionContainer/VBoxContainer" unique_id=130289893]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/MainActionContainer/VBoxContainer/MarginContainer2" unique_id=204648978]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="TravelButton" type="BoxContainer" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/MainActionContainer/VBoxContainer/MarginContainer2/HBoxContainer2" unique_id=49099599]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/MainActionContainer/VBoxContainer/MarginContainer2/HBoxContainer2/TravelButton" unique_id=1356004179]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_styles/normal = SubResource("StyleBoxFlat_j5onp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u4ky0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_r8gha")
+text = "Travel"
+
+[node name="ItemsButton" type="BoxContainer" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/MainActionContainer/VBoxContainer/MarginContainer2/HBoxContainer2" unique_id=2077825742]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/MainActionContainer/VBoxContainer/MarginContainer2/HBoxContainer2/ItemsButton" unique_id=930526659]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_styles/normal = SubResource("StyleBoxFlat_j5onp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u4ky0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_r8gha")
+text = "Items"
+
+[node name="SkillsButton" type="BoxContainer" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/MainActionContainer/VBoxContainer/MarginContainer2/HBoxContainer2" unique_id=2000044941]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/MainActionContainer/VBoxContainer/MarginContainer2/HBoxContainer2/SkillsButton" unique_id=992192661]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_styles/normal = SubResource("StyleBoxFlat_j5onp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u4ky0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_r8gha")
+text = "Skills"
+
+[node name="MenuButton2" type="BoxContainer" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/MainActionContainer/VBoxContainer/MarginContainer2/HBoxContainer2" unique_id=391077722]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/MainActionContainer/VBoxContainer/MarginContainer2/HBoxContainer2/MenuButton2" unique_id=170248127]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_styles/normal = SubResource("StyleBoxFlat_j5onp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u4ky0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_r8gha")
+text = "Menu"
+
+[node name="ConditionBox" type="BoxContainer" parent="CanvasLayer/Control/ColorRect" unique_id=19159404]
+layout_mode = 0
+offset_left = 1011.0
+offset_top = 10.0
+offset_right = 1140.0
+offset_bottom = 530.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/ConditionBox" unique_id=1148595046]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_nvloa")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/ColorRect/EnergyBox/Panel" unique_id=581081629]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/ColorRect/ConditionBox/Panel" unique_id=581081629]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = 11.0
-offset_right = 5.0
-offset_bottom = 11.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
-[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer/Control/ColorRect/EnergyBox/Panel/HBoxContainer" unique_id=1518695899]
+[node name="EnergyBox" type="BoxContainer" parent="CanvasLayer/Control/ColorRect/ConditionBox/Panel/HBoxContainer" unique_id=1518695899]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Container" type="Panel" parent="CanvasLayer/Control/ColorRect/EnergyBox/Panel/HBoxContainer/BoxContainer" unique_id=1015466181]
+[node name="EnergyContainer" type="Panel" parent="CanvasLayer/Control/ColorRect/ConditionBox/Panel/HBoxContainer/EnergyBox" unique_id=1015466181]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/EnergyBox/Panel/HBoxContainer/BoxContainer/Container" unique_id=808419632]
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Control/ColorRect/ConditionBox/Panel/HBoxContainer/EnergyBox/EnergyContainer" unique_id=534757801]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_xtug4")
+theme_override_styles/background = SubResource("StyleBoxFlat_xnrx1")
+theme_override_styles/fill = SubResource("StyleBoxFlat_s5mtl")
+value = 50.0
+fill_mode = 3
+show_percentage = false
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/EnergyBox/Panel/HBoxContainer/BoxContainer/Container/Panel" unique_id=43629666]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 252.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_4cjul")
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/ColorRect/EnergyBox/Panel/HBoxContainer/BoxContainer/Container" unique_id=1025204709]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/ColorRect/ConditionBox/Panel/HBoxContainer/EnergyBox/EnergyContainer" unique_id=157553291]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -19.0
-offset_top = -49.0
-offset_right = 19.0
-offset_bottom = -11.0
+offset_left = -20.0
+offset_top = -52.0
+offset_right = 20.0
+offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("5_ooikh")
 expand_mode = 2
 
-[node name="BoxContainer2" type="BoxContainer" parent="CanvasLayer/Control/ColorRect/EnergyBox/Panel/HBoxContainer" unique_id=1276499968]
+[node name="HungryBox" type="BoxContainer" parent="CanvasLayer/Control/ColorRect/ConditionBox/Panel/HBoxContainer" unique_id=1276499968]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Container" type="Panel" parent="CanvasLayer/Control/ColorRect/EnergyBox/Panel/HBoxContainer/BoxContainer2" unique_id=1850751562]
+[node name="HungryContainer" type="Panel" parent="CanvasLayer/Control/ColorRect/ConditionBox/Panel/HBoxContainer/HungryBox" unique_id=1850751562]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/EnergyBox/Panel/HBoxContainer/BoxContainer2/Container" unique_id=1136219995]
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Control/ColorRect/ConditionBox/Panel/HBoxContainer/HungryBox/HungryContainer" unique_id=876786229]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_xtug4")
+theme_override_styles/background = SubResource("StyleBoxFlat_oiq5e")
+theme_override_styles/fill = SubResource("StyleBoxFlat_206hl")
+value = 70.0
+fill_mode = 3
+show_percentage = false
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/EnergyBox/Panel/HBoxContainer/BoxContainer2/Container/Panel" unique_id=714386468]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 128.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_c03ob")
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/ColorRect/EnergyBox/Panel/HBoxContainer/BoxContainer2/Container" unique_id=69697237]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/ColorRect/ConditionBox/Panel/HBoxContainer/HungryBox/HungryContainer" unique_id=2024958954]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -19.0
-offset_top = -49.0
-offset_right = 19.0
-offset_bottom = -11.0
+offset_left = -20.0
+offset_top = -52.0
+offset_right = 20.0
+offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("6_c5wwr")
+texture = ExtResource("8_j5onp")
 expand_mode = 2
 
 [node name="StastBox" type="BoxContainer" parent="CanvasLayer/Control/ColorRect" unique_id=1091369130]
@@ -1026,3 +1188,5 @@ offset_bottom = 410.0
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_8ihin")
+
+[connection signal="pressed" from="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/MainActionContainer/VBoxContainer/MarginContainer/HBoxContainer/TrainingButton/Button" to="." method="_on_training_pressed"]
