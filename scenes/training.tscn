@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bxxgya0skrohq" path="res://assets/scene-assets/training-assets/character.png" id="4_j5vqi"]
 [ext_resource type="Texture2D" uid="uid://bbw0juvbmgjan" path="res://assets/scene-assets/mainMenu-assets/Energy.png" id="5_ooikh"]
 [ext_resource type="Texture2D" uid="uid://btsqrmixksd2r" path="res://assets/scene-assets/mainMenu-assets/Money.png" id="7_nvloa"]
+[ext_resource type="Texture2D" uid="uid://cm8di27mg5l7v" path="res://assets/scene-assets/training-assets/back-button.png" id="7_xnrx1"]
 [ext_resource type="Texture2D" uid="uid://cfvsb88cv6h4d" path="res://assets/Frame 3 (1).png" id="8_j5onp"]
 [ext_resource type="Shader" uid="uid://1efk8vty8x5y" path="res://shaders/gradient.gdshader" id="8_ndv2e"]
 [ext_resource type="Texture2D" uid="uid://cgliwwdkgkdqx" path="res://assets/scene-assets/mainMenu-assets/Mood.png" id="8_xtug4"]
@@ -70,6 +71,38 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_suc0b"]
+bg_color = Color(0, 0, 0.6, 0.19607843)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8m34k"]
+bg_color = Color(0.10514086, 0.72508603, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 15.0
+expand_margin_right = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8gv86"]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nvloa"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -264,6 +297,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_j5vqi")
 
 [node name="MainActionContainer" type="MarginContainer" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel" unique_id=1107772352]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -396,6 +430,84 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_j5onp")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_u4ky0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_r8gha")
 text = "Menu"
+
+[node name="TrainingActionContainer" type="MarginContainer" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel" unique_id=1756276951]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/TrainingActionContainer" unique_id=425157467]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_suc0b")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/TrainingActionContainer/Panel" unique_id=1391363087]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -317.5
+offset_top = -33.5
+offset_right = 391.5
+offset_bottom = 33.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/TrainingActionContainer/Panel/HBoxContainer" unique_id=1193005101]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_8m34k")
+text = "Running"
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/TrainingActionContainer/Panel/HBoxContainer" unique_id=321629775]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_8m34k")
+text = "Running"
+
+[node name="Button3" type="Button" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/TrainingActionContainer/Panel/HBoxContainer" unique_id=485032092]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_8m34k")
+text = "Running"
+
+[node name="Button4" type="Button" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/TrainingActionContainer/Panel/HBoxContainer" unique_id=2007546960]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_8m34k")
+text = "Running"
+
+[node name="Button5" type="Button" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/TrainingActionContainer/Panel/HBoxContainer" unique_id=1292531606]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_8m34k")
+text = "Running"
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/TrainingActionContainer/Panel" unique_id=887758546]
+layout_mode = 0
+offset_left = 20.5
+offset_top = 70.5
+offset_right = 82.5
+offset_bottom = 132.5
+
+[node name="BackToMainActionButton" type="Button" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/TrainingActionContainer/Panel/MarginContainer" unique_id=462569978]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gv86")
+icon = ExtResource("7_xnrx1")
+icon_alignment = 1
+expand_icon = true
 
 [node name="ConditionBox" type="BoxContainer" parent="CanvasLayer/Control/ColorRect" unique_id=19159404]
 layout_mode = 0
@@ -1190,3 +1302,4 @@ size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_8ihin")
 
 [connection signal="pressed" from="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/MainActionContainer/VBoxContainer/MarginContainer/HBoxContainer/TrainingButton/Button" to="." method="_on_training_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/TrainingActionContainer/Panel/MarginContainer/BackToMainActionButton" to="." method="_on_back_to_main_action_button_pressed"]

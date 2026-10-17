@@ -134,7 +134,13 @@ func update_player_ui() -> void:
 	hunger_bar.value = player.hungry
 	
 
-@onready var main_action_panel = %MainActionContainer
+@onready var main_action_container = %MainActionContainer
+@onready var training_action_container = %TrainingActionContainer
 
 func _on_training_pressed() -> void:
-	main_action_panel.visible = false;
+	main_action_container.visible = false;
+	training_action_container.visible = true;
+
+func _on_back_to_main_action_button_pressed() -> void:
+	training_action_container.visible =false;
+	main_action_container.visible = true;
