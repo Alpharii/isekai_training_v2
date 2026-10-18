@@ -144,3 +144,10 @@ func _on_training_pressed() -> void:
 func _on_back_to_main_action_button_pressed() -> void:
 	training_action_container.visible =false;
 	main_action_container.visible = true;
+
+func _on_running_pressed() -> void:
+	var result = TrainingManager.train("strength", 1)
+	if result.success:
+		update_player_ui()
+	else:
+		pass
