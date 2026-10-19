@@ -1,9 +1,14 @@
 extends Node2D
 
+@onready var game_over_nodes = %GameOver
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	update_player_ui()
+	game_over_nodes.get_node("CanvasLayer").visible = false;
+	
+	game_over_nodes.left_button_pressed.connect(_on_game_over_left_button_pressed)
+	game_over_nodes.right_button_pressed.connect(_on_game_over_right_button_pressed)
 
 func get_mood(value: int) -> String:
 	if value == 5:
@@ -150,4 +155,23 @@ func _on_running_pressed() -> void:
 	if result.success:
 		update_player_ui()
 	else:
-		pass
+		get_tree().paused = true;
+		game_over_nodes.get_node("%HeaderText").text = "Kamu Kelelahan!"
+		game_over_nodes.get_node("%MainText").text = "Kamu Pingsan Karena \n Kelelahan"
+		
+		# 2. Mengubah teks pada Button
+		game_over_nodes.get_node("%LeftButton").text = "Coba Lagi"
+		game_over_nodes.get_node("%RightButton").text = "Menu Utama"
+		
+		# 3. Menampilkan CanvasLayer
+		game_over_nodes.get_node("CanvasLayer").visible = true;
+
+func _on_game_over_left_button_pressed() -> void:
+	print("called left")
+	get_tree().paused = false
+	get_tree().reload_current_scene()
+
+func _on_game_over_right_button_pressed() -> void:
+	print("called right")
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn") # Sesuaikan path scene menu Anda
