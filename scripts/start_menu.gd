@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var load_panel = %LoadPanel
 @onready var load_list_container = %LoadListContainer
+const SAVE_SLOT_SCENE = preload("res://scenes/components/save_slot.tscn")
 
 func _ready() -> void:
 	load_panel.visible = false
@@ -19,34 +20,23 @@ func refresh_save_list() -> void:
 		child.queue_free()
 
 	if not PlayerManager.has_save():
-		var empty_label = Label.new()
-		empty_label.text = "No save data available."
-		load_list_container.add_child(empty_label)
+		var label = Label.new()
+		label.text = "No save data available."
+		load_list_container.add_child(label)
 		return
 
 	var data = PlayerManager.read_save()
 	if data.is_empty():
-		var error_label = Label.new()
-		error_label.text = "Save data is invalid."
-		load_list_container.add_child(error_label)
+		var label = Label.new()
+		label.text = "Save data is invalid."
+		load_list_container.add_child(label)
 		return
 
-	var slot = VBoxContainer.new()
-	var info = Label.new()
-	info.text = "%s - Level %d\nEXP: %d | Money: %d" % [
-		data.get("player_name", "Player"),
-		data.get("level", 1),
-		data.get("experience", 0),
-		data.get("money", 0)
-	]
-
-	var load_button = Button.new()
-	load_button.text = "Load Game"
-	load_button.pressed.connect(_on_load_slot_pressed)
-
-	slot.add_child(info)
-	slot.add_child(load_button)
+	var slot = SAVE_SLOT_SCENE.instantiate()
 	load_list_container.add_child(slot)
+	slot.setup(data)
+	slot.load_requested.connect(_on_load_slot_pressed)
+
 
 func _on_load_slot_pressed() -> void:
 	if not PlayerManager.load_game():

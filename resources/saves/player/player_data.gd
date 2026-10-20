@@ -32,6 +32,13 @@ class_name PlayerData
 @export var current_timeline: String = ""
 @export var last_completed_timeline: String = ""
 
+@export_category("Time")
+@export_range(1, 31) var game_day: int = 1
+@export_range(1, 12) var game_month: int = 1
+@export var game_year: int = 1
+@export_range(0, 1439) var game_minutes: int = 790
+@export var play_time_seconds: float = 0.0
+
 func to_dict() -> Dictionary:
 	return {
 		"player_name": player_name,
@@ -62,7 +69,13 @@ func to_dict() -> Dictionary:
 		"mood": mood,
 
 		"current_timeline": current_timeline,
-		"last_completed_timeline": last_completed_timeline
+		"last_completed_timeline": last_completed_timeline,
+	
+		"game_day": game_day,
+		"game_month": game_month,
+		"game_year": game_year,
+		"game_minutes": game_minutes,
+		"play_time_seconds": play_time_seconds
 	}
 
 
@@ -96,3 +109,9 @@ func from_dict(data: Dictionary) -> void:
 
 	current_timeline = data.get("current_timeline", "")
 	last_completed_timeline = data.get("last_completed_timeline", "")
+	
+	game_day = data.get("game_day", 1)
+	game_month = data.get("game_month", 1)
+	game_year = data.get("game_year", 1)
+	game_minutes = data.get("game_minutes", 790)
+	play_time_seconds = data.get("play_time_seconds", 0.0)
