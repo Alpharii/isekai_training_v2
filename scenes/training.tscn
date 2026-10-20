@@ -1377,6 +1377,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_8ihin")
 
+[connection signal="pressed" from="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/MainActionContainer/VBoxContainer/MarginContainer/HBoxContainer/RestButton/Button" to="." method="_on_rest_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/MainActionContainer/VBoxContainer/MarginContainer/HBoxContainer/TrainingButton/Button" to="." method="_on_training_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/MainActionContainer/VBoxContainer/MarginContainer2/HBoxContainer2/MenuButton2/Button" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/TrainingActionContainer/Panel/HBoxContainer/Running" to="." method="_on_running_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/TrainingActionContainer/Panel/MarginContainer/BackToMainActionButton" to="." method="_on_back_to_main_action_button_pressed"]

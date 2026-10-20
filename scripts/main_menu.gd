@@ -140,6 +140,7 @@ func get_mood(value: int) -> String:
 		return "Normal"
 
 func _on_next_turn_button_pressed() -> void:
+	PlayerManager.save_game()
 	get_tree().change_scene_to_file("res://scenes/training.tscn")
 
 

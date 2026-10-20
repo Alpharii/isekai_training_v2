@@ -29,8 +29,8 @@ class_name PlayerData
 @export var mood: int = 3
 
 @export_category("Progress")
+@export var current_timeline: String = ""
 @export var last_completed_timeline: String = ""
-
 
 func to_dict() -> Dictionary:
 	return {
@@ -61,6 +61,7 @@ func to_dict() -> Dictionary:
 
 		"mood": mood,
 
+		"current_timeline": current_timeline,
 		"last_completed_timeline": last_completed_timeline
 	}
 
@@ -93,4 +94,5 @@ func from_dict(data: Dictionary) -> void:
 
 	mood = data.get("mood", 5)
 
+	current_timeline = data.get("current_timeline", "")
 	last_completed_timeline = data.get("last_completed_timeline", "")

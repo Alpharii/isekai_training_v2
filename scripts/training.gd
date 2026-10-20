@@ -139,6 +139,18 @@ func update_player_ui() -> void:
 	hunger_bar.value = player.hungry
 	
 
+func _on_game_over_left_button_pressed() -> void:
+	get_tree().paused = false
+	get_tree().reload_current_scene()
+
+func _on_game_over_right_button_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
+func _on_menu_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
+
 @onready var main_action_container = %MainActionContainer
 @onready var training_action_container = %TrainingActionContainer
 
@@ -166,12 +178,6 @@ func _on_running_pressed() -> void:
 		# 3. Menampilkan CanvasLayer
 		game_over_nodes.get_node("CanvasLayer").visible = true;
 
-func _on_game_over_left_button_pressed() -> void:
-	print("called left")
-	get_tree().paused = false
-	get_tree().reload_current_scene()
-
-func _on_game_over_right_button_pressed() -> void:
-	print("called right")
-	get_tree().paused = false
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn") # Sesuaikan path scene menu Anda
+func _on_rest_button_pressed() -> void:
+	TrainingManager.rest()
+	update_player_ui()

@@ -33,8 +33,13 @@ func train(stat_name: String, base_gain: int = 5) -> Dictionary:
 
 func rest() -> void:
 	var player = PlayerManager.player_data
-	player.energy = min(player.max_energy, player.energy + 40)
+	player.energy = min(player.max_energy, player.energy + 15)
 	player.hungry = min(player.max_hungry, player.hungry + 5)
+	
+	if(player.energy > player.max_energy):
+		player.energy = player.max_energy
+	if(player.hungry > player.max_hungry):
+		player.hungry = player.max_hungry
 
 func eat(cost: int = 20) -> bool:
 	var player = PlayerManager.player_data
