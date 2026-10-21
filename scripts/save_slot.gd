@@ -1,6 +1,8 @@
+
 extends Control
 
-signal load_requested
+signal load_requested(slot_id: int)
+signal save_requested(slot_id: int)
 
 @onready var player_name = %PlayerName
 @onready var player_level = %PlayerLevel
@@ -11,12 +13,15 @@ const MONTHS = [
 	"January", "February", "March", "April", "May", "June",
 	"July", "August", "September", "October", "November", "December"
 ]
-
 const YEAR_NAMES = [
 	"First Year", "Second Year", "Third Year", "Fourth Year",
 	"Fifth Year", "Sixth Year", "Seventh Year", "Eighth Year",
 	"Ninth Year", "Tenth Year"
 ]
+
+var slot_id: int = 1
+var has_data: bool = false
+var mode: String = "load"
 
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_STOP
@@ -24,10 +29,23 @@ func _ready() -> void:
 
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		print("Save slot clicked")
-		load_requested.emit()
+		if mode == "save":
+			save_requested.emit(slot_id)
+		elif has_data:
+			load_requested.emit(slot_id)
 
-func setup(data: Dictionary) -> void:
+func setup(data: Dictionary, id: int, slot_mode: String = "load") -> void:
+	slot_id = id
+	mode = slot_mode
+	has_data = not data.is_empty()
+
+	if not has_data:
+		player_name.text = "Empty Slot %d" % slot_id
+		player_level.text = "-"
+		game_time.text = "-"
+		play_time.text = "-"
+		return
+
 	player_name.text = data.get("player_name", "Player")
 	player_level.text = "Level %d" % data.get("level", 1)
 	game_time.text = format_game_time(data)

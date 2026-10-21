@@ -140,7 +140,7 @@ func get_mood(value: int) -> String:
 		return "Normal"
 
 func _on_next_turn_button_pressed() -> void:
-	PlayerManager.save_game()
+	#PlayerManager.save_game()
 	get_tree().change_scene_to_file("res://scenes/training.tscn")
 
 
@@ -148,6 +148,43 @@ func _on_timeline_ended() -> void:
 	print("Timeline selesai!")
 
 	PlayerManager.player_data.last_completed_timeline = "timeline"
-	PlayerManager.save_game()
+	#PlayerManager.save_game()
 
 	update_player_ui()
+
+
+
+@onready var load_panel = %LoadPanel
+@onready var load_list_container = %LoadListContainer
+
+const SAVE_SLOT_SCENE = preload("res://scenes/components/save_slot.tscn")
+
+var slot_mode: String = "load"
+
+func refresh_save_list() -> void:
+	for child in load_list_container.get_children():
+		child.queue_free()
+
+	for slot_id in range(1, PlayerManager.MAX_SAVE_SLOTS + 1):
+		var slot = SAVE_SLOT_SCENE.instantiate()
+		load_list_container.add_child(slot)
+		slot.setup(PlayerManager.read_save(slot_id), slot_id, slot_mode)
+		slot.save_requested.connect(_on_save_slot_pressed)
+
+func _on_save_button_pressed() -> void:
+	slot_mode = "save"
+	load_panel.visible = true
+	refresh_save_list()
+
+func _on_save_slot_pressed(slot_id: int) -> void:
+	if not PlayerManager.save_game(slot_id):
+		push_warning("Failed to save slot %d." % slot_id)
+		return
+	refresh_save_list()
+	load_panel.visible = false
+
+func _on_cancel_load_button_pressed() -> void:
+	load_panel.visible = false
+
+func _on_home_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/start_menu.tscn")
