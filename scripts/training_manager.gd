@@ -3,33 +3,55 @@ extends Node
 
 signal training_completed(result: Dictionary)
 
-func train(stat_name: String, base_gain: int = 5) -> Dictionary:
+const TRAININGS: Array[TrainingData] = [
+	preload("res://resources/training/data/speed.tres"),
+	#preload("res://resources/training/data/speed.tres"),
+	#preload("res://resources/training/data/speed.tres"),
+]
+
+var trainings: Dictionary[StringName, TrainingData] = {}
+
+func _ready() -> void:
+	for training in TRAININGS:
+		if training == null:
+			continue
+		if trainings.has(training.id):
+			push_warning("Duplicate training ID: " + str(training.id))
+			continue
+		trainings[training.id] = training
+
+func train(training_id: StringName) -> Dictionary:
 	var player = PlayerManager.player_data
-	if player.energy < 20:
+	var training = trainings.get(training_id)
+	if training == null:
+		return {"success": false, "message": "Training tidak dikenal!"}
+	if player.energy < training.energy_cost:
 		return {"success": false, "message": "Energy tidak cukup!"}
-	if not stat_name in ["strength", "stamina", "dexterity", "magic", "wisdom", "charisma", "stealth", "intelligence", "agility"]:
-		return {"success": false, "message": "Training tidak valid!"}
 
-	var mood_bonus := 1.0
-	match player.mood:
-		5: mood_bonus = 1.3
-		4: mood_bonus = 1.15
-		2: mood_bonus = 0.8
-		1: mood_bonus = 0.6
+	var mood_multiplier := 1.0
+	if training.mood_multiplier_enabled:
+		match player.mood:
+			5: mood_multiplier = 1.3
+			4: mood_multiplier = 1.15
+			2: mood_multiplier = 0.8
+			1: mood_multiplier = 0.6
 
-	var gain := int(round(base_gain * mood_bonus))
-	player.set(stat_name, player.get(stat_name) + gain)
-	player.energy = max(0, player.energy - 20)
-	player.hungry = min(player.max_hungry, player.hungry - 10)
+	player.energy -= training.energy_cost
+	var context := {"mood_multiplier": mood_multiplier}
+	var effects: Array[Dictionary] = []
+	for effect in training.effects:
+		if effect != null:
+			effects.append(effect.apply(player, context))
 
 	var result := {
 		"success": true,
-		"stat": stat_name,
-		"gain": gain,
-		"message": "%s +%d" % [stat_name.capitalize(), gain]
+		"training_id": training.id,
+		"effects": effects,
+		"message": "%s selesai!" % training.display_name
 	}
 	training_completed.emit(result)
 	return result
+
 
 func rest() -> void:
 	var player = PlayerManager.player_data

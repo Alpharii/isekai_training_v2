@@ -162,21 +162,18 @@ func _on_back_to_main_action_button_pressed() -> void:
 	training_action_container.visible =false;
 	main_action_container.visible = true;
 
-func _on_running_pressed() -> void:
-	var result = TrainingManager.train("strength", 1)
+
+func _on_speed_pressed() -> void:
+	var result = TrainingManager.train(&"speed")
 	if result.success:
 		update_player_ui()
 	else:
-		get_tree().paused = true;
+		get_tree().paused = true
 		game_over_nodes.get_node("%HeaderText").text = "Kamu Kelelahan!"
 		game_over_nodes.get_node("%MainText").text = "Kamu Pingsan Karena \n Kelelahan"
-		
-		# 2. Mengubah teks pada Button
 		game_over_nodes.get_node("%LeftButton").text = "Coba Lagi"
 		game_over_nodes.get_node("%RightButton").text = "Menu Utama"
-		
-		# 3. Menampilkan CanvasLayer
-		game_over_nodes.get_node("CanvasLayer").visible = true;
+		game_over_nodes.get_node("CanvasLayer").visible = true
 
 func _on_rest_button_pressed() -> void:
 	TrainingManager.rest()

@@ -37,3 +37,6 @@ func _on_load_slot_pressed(slot_id: int) -> void:
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
+	
+func _on_cancel_load_button_pressed() -> void:
+	load_panel.visible = false
