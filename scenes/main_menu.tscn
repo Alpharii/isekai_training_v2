@@ -100,10 +100,6 @@ shader_parameter/warna_bawah = Color(0.5, 0.35, 0, 1)
 shader_parameter/pakai_warna_tiga = true
 shader_parameter/ukuran_label = Vector2(100, 50)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
-bg_color = Color(0, 0, 0, 0.47843137)
-corner_radius_bottom_left = 70
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7ex8"]
 bg_color = Color(0, 0, 0, 0.34901962)
 corner_radius_top_left = 8
@@ -192,6 +188,10 @@ expand_margin_left = 5.0
 expand_margin_top = 5.0
 expand_margin_right = 5.0
 expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1a85y"]
+bg_color = Color(0, 0, 0, 0.47843137)
+corner_radius_bottom_left = 50
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8egab"]
 corner_radius_top_left = 12
@@ -966,34 +966,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "World Map"
 
-[node name="DateTimeBox" type="BoxContainer" parent="CanvasLayer/Control/TextureRect" unique_id=2077960128]
-layout_mode = 0
-offset_left = 611.0
-offset_top = 2.0
-offset_right = 1153.0
-offset_bottom = 75.0
-
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/DateTimeBox" unique_id=1434309948]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_wu84c")
-
-[node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect/DateTimeBox/Panel" unique_id=418412825]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -211.5
-offset_top = -21.5
-offset_right = 245.5
-offset_bottom = 13.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 24
-text = "01 January,  First Year, 00.00 AM"
-
 [node name="ConditionInfoBox" type="BoxContainer" parent="CanvasLayer/Control/TextureRect" unique_id=232510893]
 layout_mode = 1
 anchors_preset = 7
@@ -1200,6 +1172,39 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_vr8o3")
 icon = ExtResource("16_j7ex8")
 icon_alignment = 1
 expand_icon = true
+
+[node name="DateTimeBox" type="BoxContainer" parent="CanvasLayer/Control/TextureRect" unique_id=1652640471]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -345.0
+offset_bottom = 70.0
+grow_horizontal = 0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/TextureRect/DateTimeBox" unique_id=1036555232]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_1a85y")
+
+[node name="GameTimeLabel" type="Label" parent="CanvasLayer/Control/TextureRect/DateTimeBox/Panel" unique_id=1842668260]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.0
+offset_top = -28.5
+offset_right = 121.0
+offset_bottom = 28.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "01 January,  First Year,
+00.00 AM"
+horizontal_alignment = 1
 
 [node name="LoadPanel" type="Panel" parent="CanvasLayer/Control" unique_id=973367548]
 unique_name_in_owner = true

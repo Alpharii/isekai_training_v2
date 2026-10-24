@@ -124,6 +124,16 @@ func update_player_ui() -> void:
 	
 	# Jika hunger_bar juga punya struktur Label yang sama:
 	hunger_bar.get_node("HBoxContainer/Label").text = "%d / %d" % [player.hungry, player.max_hungry]
+	
+	# =========================
+	# Game Time Info
+	# =========================
+	
+	var game_time_label = %GameTimeLabel
+	game_time_label.text = TimeManager.get_datetime_text()
+	
+	
+
 
 func get_mood(value: int) -> String:
 	if value == 5:

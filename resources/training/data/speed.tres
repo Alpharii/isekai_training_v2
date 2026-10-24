@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://dncfhhtm0pq53" path="res://resources/training/training_data.gd" id="2_vcxd6"]
 [ext_resource type="Script" uid="uid://ca2j435cdfijd" path="res://resources/training/energy_effect.gd" id="3_ojdgq"]
 [ext_resource type="Script" uid="uid://b5iiooh7yyht" path="res://resources/training/hunger_effect.gd" id="4_555qx"]
+[ext_resource type="Script" uid="uid://cc4bixjycqq" path="res://resources/training/time_effect.gd" id="5_555qx"]
 
 [sub_resource type="Resource" id="Resource_ojdgq"]
 script = ExtResource("2_24eho")
@@ -28,9 +29,14 @@ script = ExtResource("4_555qx")
 amount = -5
 metadata/_custom_type_script = "uid://b5iiooh7yyht"
 
+[sub_resource type="Resource" id="Resource_5qt7v"]
+script = ExtResource("5_555qx")
+minutes_passed = 30
+metadata/_custom_type_script = "uid://cc4bixjycqq"
+
 [resource]
 script = ExtResource("2_vcxd6")
 id = &"speed"
 display_name = "Speed"
-effects = Array[ExtResource("1_st06j")]([SubResource("Resource_ojdgq"), SubResource("Resource_555qx"), SubResource("Resource_vpetm"), SubResource("Resource_b2qhx")])
+effects = Array[ExtResource("1_st06j")]([SubResource("Resource_ojdgq"), SubResource("Resource_555qx"), SubResource("Resource_vpetm"), SubResource("Resource_b2qhx"), SubResource("Resource_5qt7v")])
 metadata/_custom_type_script = "uid://dncfhhtm0pq53"

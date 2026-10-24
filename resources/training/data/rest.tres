@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="TrainingData" format=3 uid="uid://dlwxs17pa1e84"]
+
+[ext_resource type="Script" uid="uid://buwthsh61tlmu" path="res://resources/training/training_effect.gd" id="1_5aba4"]
+[ext_resource type="Script" uid="uid://ca2j435cdfijd" path="res://resources/training/energy_effect.gd" id="2_6o3ud"]
+[ext_resource type="Script" uid="uid://dncfhhtm0pq53" path="res://resources/training/training_data.gd" id="2_tqwuu"]
+[ext_resource type="Script" uid="uid://b5iiooh7yyht" path="res://resources/training/hunger_effect.gd" id="3_mtphx"]
+[ext_resource type="Script" uid="uid://cc4bixjycqq" path="res://resources/training/time_effect.gd" id="4_syvca"]
+
+[sub_resource type="Resource" id="Resource_bghp2"]
+script = ExtResource("2_6o3ud")
+amount = 20
+metadata/_custom_type_script = "uid://ca2j435cdfijd"
+
+[sub_resource type="Resource" id="Resource_y28uv"]
+script = ExtResource("3_mtphx")
+amount = -5
+metadata/_custom_type_script = "uid://b5iiooh7yyht"
+
+[sub_resource type="Resource" id="Resource_pvn0f"]
+script = ExtResource("4_syvca")
+minutes_passed = 30
+metadata/_custom_type_script = "uid://cc4bixjycqq"
+
+[resource]
+script = ExtResource("2_tqwuu")
+id = &"rest"
+display_name = "Rest"
+energy_cost = -1
+effects = Array[ExtResource("1_5aba4")]([SubResource("Resource_bghp2"), SubResource("Resource_y28uv"), SubResource("Resource_pvn0f")])
+metadata/_custom_type_script = "uid://dncfhhtm0pq53"

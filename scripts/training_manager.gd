@@ -1,11 +1,10 @@
-
 extends Node
 
 signal training_completed(result: Dictionary)
 
 const TRAININGS: Array[TrainingData] = [
 	preload("res://resources/training/data/speed.tres"),
-	#preload("res://resources/training/data/speed.tres"),
+	preload("res://resources/training/data/rest.tres"),
 	#preload("res://resources/training/data/speed.tres"),
 ]
 
@@ -24,9 +23,11 @@ func train(training_id: StringName) -> Dictionary:
 	var player = PlayerManager.player_data
 	var training = trainings.get(training_id)
 	if training == null:
-		return {"success": false, "message": "Training tidak dikenal!"}
+		return {"success": false, "text": "Error" ,"subtext": "Training tidak dikenal!"}
 	if player.energy < training.energy_cost:
-		return {"success": false, "message": "Energy tidak cukup!"}
+		return {"success": false, "text": "Kamu Kelelahan", "subtext": "Energy tidak cukup!"}
+	if player.hungry < training.hunger_cost:
+		return {"success": false, "text": "Kamu Kelaparan", "subtext": "Kamu butuh makan!"}
 
 	var mood_multiplier := 1.0
 	if training.mood_multiplier_enabled:

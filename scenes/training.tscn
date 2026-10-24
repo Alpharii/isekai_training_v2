@@ -355,7 +355,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_j5vqi")
 
 [node name="MainActionContainer" type="MarginContainer" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel" unique_id=1107772352]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -491,6 +490,7 @@ text = "Menu"
 
 [node name="TrainingActionContainer" type="MarginContainer" parent="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel" unique_id=1756276951]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1341,7 +1341,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_4njoh")
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/ColorRect/DateTimeBox/Panel" unique_id=1639014117]
+[node name="GameTimeLabel" type="Label" parent="CanvasLayer/Control/ColorRect/DateTimeBox/Panel" unique_id=1639014117]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

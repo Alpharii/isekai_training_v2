@@ -138,6 +138,16 @@ func update_player_ui() -> void:
 	hunger_bar.max_value = player.max_hungry
 	hunger_bar.value = player.hungry
 	
+	
+	# =========================
+	# Game Time Info
+	# =========================
+	
+	var game_time_label = %GameTimeLabel
+	game_time_label.text = TimeManager.get_datetime_text()
+	
+	
+
 
 func _on_game_over_left_button_pressed() -> void:
 	get_tree().paused = false
@@ -169,12 +179,20 @@ func _on_speed_pressed() -> void:
 		update_player_ui()
 	else:
 		get_tree().paused = true
-		game_over_nodes.get_node("%HeaderText").text = "Kamu Kelelahan!"
-		game_over_nodes.get_node("%MainText").text = "Kamu Pingsan Karena \n Kelelahan"
+		game_over_nodes.get_node("%HeaderText").text = str(result.text)
+		game_over_nodes.get_node("%MainText").text = str(result.subtext)
 		game_over_nodes.get_node("%LeftButton").text = "Coba Lagi"
 		game_over_nodes.get_node("%RightButton").text = "Menu Utama"
 		game_over_nodes.get_node("CanvasLayer").visible = true
 
 func _on_rest_button_pressed() -> void:
-	TrainingManager.rest()
-	update_player_ui()
+	var result = TrainingManager.train(&"rest")
+	if result.success:
+		update_player_ui()
+	else:
+		get_tree().paused = true
+		game_over_nodes.get_node("%HeaderText").text = str(result.text)
+		game_over_nodes.get_node("%MainText").text = str(result.subtext)
+		game_over_nodes.get_node("%LeftButton").text = "Coba Lagi"
+		game_over_nodes.get_node("%RightButton").text = "Menu Utama"
+		game_over_nodes.get_node("CanvasLayer").visible = true

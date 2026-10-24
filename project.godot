@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Dialogic="*uid://ds2q0uclmolvu"
 PlayerManager="*uid://du7tswkja4ow2"
 TrainingManager="*uid://mmar6iqyhttw"
+TimeManager="*uid://mfssd2h6155j"
 
 [dialogic]
 
