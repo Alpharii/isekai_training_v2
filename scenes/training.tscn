@@ -1376,4 +1376,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_8ihin")
 [connection signal="pressed" from="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/MainActionContainer/VBoxContainer/MarginContainer/HBoxContainer/TrainingButton/Button" to="." method="_on_training_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/MainActionContainer/VBoxContainer/MarginContainer2/HBoxContainer2/MenuButton2/Button" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/TrainingActionContainer/Panel/HBoxContainer/Speed" to="." method="_on_speed_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/TrainingActionContainer/Panel/HBoxContainer/Stamina" to="." method="_on_stamina_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/TrainingActionContainer/Panel/HBoxContainer/Power" to="." method="_on_power_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/TrainingActionContainer/Panel/HBoxContainer/Magic" to="." method="_on_magic_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/TrainingActionContainer/Panel/HBoxContainer/Work" to="." method="_on_work_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/ColorRect/ActionBox/MainActionPanel/TrainingActionContainer/Panel/MarginContainer/BackToMainActionButton" to="." method="_on_back_to_main_action_button_pressed"]

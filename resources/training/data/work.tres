@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="TrainingData" format=3 uid="uid://4h3so5i8gfcw"]
+
+[ext_resource type="Script" uid="uid://buwthsh61tlmu" path="res://resources/training/training_effect.gd" id="1_qh1pq"]
+[ext_resource type="Script" uid="uid://be7pmitimh4cv" path="res://resources/training/money_effect.gd" id="2_etdb2"]
+[ext_resource type="Script" uid="uid://dncfhhtm0pq53" path="res://resources/training/training_data.gd" id="2_sy5dk"]
+[ext_resource type="Script" uid="uid://ca2j435cdfijd" path="res://resources/training/energy_effect.gd" id="3_lu61y"]
+[ext_resource type="Script" uid="uid://b5iiooh7yyht" path="res://resources/training/hunger_effect.gd" id="4_fitd0"]
+[ext_resource type="Script" uid="uid://cc4bixjycqq" path="res://resources/training/time_effect.gd" id="5_kq484"]
+
+[sub_resource type="Resource" id="Resource_yrke1"]
+script = ExtResource("2_etdb2")
+amount = 20
+metadata/_custom_type_script = "uid://be7pmitimh4cv"
+
+[sub_resource type="Resource" id="Resource_mvcws"]
+script = ExtResource("3_lu61y")
+metadata/_custom_type_script = "uid://ca2j435cdfijd"
+
+[sub_resource type="Resource" id="Resource_ysoth"]
+script = ExtResource("4_fitd0")
+metadata/_custom_type_script = "uid://b5iiooh7yyht"
+
+[sub_resource type="Resource" id="Resource_t8qnn"]
+script = ExtResource("5_kq484")
+metadata/_custom_type_script = "uid://cc4bixjycqq"
+
+[resource]
+script = ExtResource("2_sy5dk")
+id = &"work"
+display_name = "Work"
+effects = Array[ExtResource("1_qh1pq")]([SubResource("Resource_yrke1"), SubResource("Resource_mvcws"), SubResource("Resource_ysoth"), SubResource("Resource_t8qnn")])
+metadata/_custom_type_script = "uid://dncfhhtm0pq53"

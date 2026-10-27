@@ -196,3 +196,57 @@ func _on_rest_button_pressed() -> void:
 		game_over_nodes.get_node("%LeftButton").text = "Coba Lagi"
 		game_over_nodes.get_node("%RightButton").text = "Menu Utama"
 		game_over_nodes.get_node("CanvasLayer").visible = true
+
+
+func _on_power_pressed() -> void:
+	var result = TrainingManager.train(&"power")
+	if result.success:
+		update_player_ui()
+	else:
+		get_tree().paused = true
+		game_over_nodes.get_node("%HeaderText").text = str(result.text)
+		game_over_nodes.get_node("%MainText").text = str(result.subtext)
+		game_over_nodes.get_node("%LeftButton").text = "Coba Lagi"
+		game_over_nodes.get_node("%RightButton").text = "Menu Utama"
+		game_over_nodes.get_node("CanvasLayer").visible = true
+
+
+
+func _on_work_pressed() -> void:
+	var result = TrainingManager.train(&"work")
+	if result.success:
+		update_player_ui()
+	else:
+		get_tree().paused = true
+		game_over_nodes.get_node("%HeaderText").text = str(result.text)
+		game_over_nodes.get_node("%MainText").text = str(result.subtext)
+		game_over_nodes.get_node("%LeftButton").text = "Coba Lagi"
+		game_over_nodes.get_node("%RightButton").text = "Menu Utama"
+		game_over_nodes.get_node("CanvasLayer").visible = true
+
+
+
+func _on_magic_pressed() -> void:
+	var result = TrainingManager.train(&"magic")
+	if result.success:
+		update_player_ui()
+	else:
+		get_tree().paused = true
+		game_over_nodes.get_node("%HeaderText").text = str(result.text)
+		game_over_nodes.get_node("%MainText").text = str(result.subtext)
+		game_over_nodes.get_node("%LeftButton").text = "Coba Lagi"
+		game_over_nodes.get_node("%RightButton").text = "Menu Utama"
+		game_over_nodes.get_node("CanvasLayer").visible = true
+
+
+func _on_stamina_pressed() -> void:
+	var result = TrainingManager.train(&"stamina")
+	if result.success:
+		update_player_ui()
+	else:
+		get_tree().paused = true
+		game_over_nodes.get_node("%HeaderText").text = str(result.text)
+		game_over_nodes.get_node("%MainText").text = str(result.subtext)
+		game_over_nodes.get_node("%LeftButton").text = "Coba Lagi"
+		game_over_nodes.get_node("%RightButton").text = "Menu Utama"
+		game_over_nodes.get_node("CanvasLayer").visible = true

@@ -5,7 +5,8 @@ signal training_completed(result: Dictionary)
 const TRAININGS: Array[TrainingData] = [
 	preload("res://resources/training/data/speed.tres"),
 	preload("res://resources/training/data/rest.tres"),
-	#preload("res://resources/training/data/speed.tres"),
+	preload("res://resources/training/data/power.tres"),
+	preload("res://resources/training/data/work.tres"),
 ]
 
 var trainings: Dictionary[StringName, TrainingData] = {}

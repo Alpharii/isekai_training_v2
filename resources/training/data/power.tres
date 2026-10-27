@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TrainingData" format=3 uid="uid://cp35mm16m6584"]
+
+[ext_resource type="Script" uid="uid://buwthsh61tlmu" path="res://resources/training/training_effect.gd" id="1_3v64j"]
+[ext_resource type="Script" uid="uid://dncfhhtm0pq53" path="res://resources/training/training_data.gd" id="2_ilt1m"]
+
+[resource]
+script = ExtResource("2_ilt1m")
+metadata/_custom_type_script = "uid://dncfhhtm0pq53"

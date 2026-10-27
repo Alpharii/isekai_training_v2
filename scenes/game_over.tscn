@@ -54,6 +54,7 @@ process_mode = 3
 script = ExtResource("1_xeevv")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1666321363]
+visible = false
 
 [node name="Control" type="Panel" parent="CanvasLayer" unique_id=1980431763]
 anchors_preset = 8
