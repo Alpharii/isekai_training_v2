@@ -1282,6 +1282,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [connection signal="pressed" from="CanvasLayer/Control/TextureRect/NextTurnBox/NextTurnButton" to="." method="_on_next_turn_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/TextureRect/ActionButtonsBox/ColorRect/HBoxContainer/VBoxContainer/Items" to="." method="_on_items_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/TextureRect/ActionButtonsBox/ColorRect/HBoxContainer/VBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/TextureRect/HomeContainer/HomeButton" to="." method="_on_home_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/LoadPanel/HeaderPanel/CancelLoadButton" to="." method="_on_cancel_load_button_pressed"]

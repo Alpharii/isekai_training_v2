@@ -5,7 +5,7 @@ func _ready() -> void:
 
 func _on_new_game_pressed() -> void:
 	PlayerManager.new_game()
-	get_tree().change_scene_to_file("res://scenes/loading.tscn")
+	SceneManager.change_scene("res://scenes/loading.tscn")
 
 @onready var load_panel = %LoadPanel
 @onready var load_list_container = %LoadListContainer
@@ -33,7 +33,7 @@ func _on_load_slot_pressed(slot_id: int) -> void:
 	if not PlayerManager.load_game(slot_id):
 		push_warning("Failed to load slot %d." % slot_id)
 		return
-	get_tree().change_scene_to_file("res://scenes/loading.tscn")
+	SceneManager.change_scene("res://scenes/loading.tscn")
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()

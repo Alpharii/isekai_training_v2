@@ -39,6 +39,9 @@ class_name PlayerData
 @export_range(0, 1439) var game_minutes: int = 790
 @export var play_time_seconds: float = 0.0
 
+@export_category("Inventory")
+@export var inventory_slots: Array[Dictionary] = []
+
 func to_dict() -> Dictionary:
 	return {
 		"player_name": player_name,
@@ -75,7 +78,8 @@ func to_dict() -> Dictionary:
 		"game_month": game_month,
 		"game_year": game_year,
 		"game_minutes": game_minutes,
-		"play_time_seconds": play_time_seconds
+		"play_time_seconds": play_time_seconds,
+		"inventory_slots": inventory_slots
 	}
 
 
@@ -115,3 +119,10 @@ func from_dict(data: Dictionary) -> void:
 	game_year = data.get("game_year", 1)
 	game_minutes = data.get("game_minutes", 790)
 	play_time_seconds = data.get("play_time_seconds", 0.0)
+	
+	inventory_slots.clear()
+	var saved_inventory: Array = data.get("inventory_slots", [])
+
+	for slot in saved_inventory:
+		if slot is Dictionary:
+			inventory_slots.append(slot)

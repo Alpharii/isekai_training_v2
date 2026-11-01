@@ -26,6 +26,7 @@ func has_save(slot_id: int) -> bool:
 
 func new_game() -> void:
 	player_data = PlayerData.new()
+	InventoryManager.load_from_player_data()
 	player_data.current_timeline = "timeline"
 	is_new_game = true
 
@@ -70,6 +71,7 @@ func load_game(slot_id: int) -> bool:
 	if data.is_empty():
 		return false
 	player_data.from_dict(data)
+	InventoryManager.load_from_player_data()
 	current_slot = slot_id
 	is_new_game = false
 	# Load save Dialogic yang sesuai dengan slot ini.

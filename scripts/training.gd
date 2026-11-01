@@ -155,10 +155,10 @@ func _on_game_over_left_button_pressed() -> void:
 
 func _on_game_over_right_button_pressed() -> void:
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	SceneManager.change_scene("res://scenes/main_menu.tscn")
 
 func _on_menu_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	SceneManager.change_scene("res://scenes/main_menu.tscn")
 
 
 @onready var main_action_container = %MainActionContainer
@@ -250,3 +250,6 @@ func _on_stamina_pressed() -> void:
 		game_over_nodes.get_node("%LeftButton").text = "Coba Lagi"
 		game_over_nodes.get_node("%RightButton").text = "Menu Utama"
 		game_over_nodes.get_node("CanvasLayer").visible = true
+
+func _on_item_button_pressed() -> void:
+		SceneManager.change_scene("res://scenes/inventory.tscn")

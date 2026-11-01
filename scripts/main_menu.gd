@@ -151,7 +151,7 @@ func get_mood(value: int) -> String:
 
 func _on_next_turn_button_pressed() -> void:
 	#PlayerManager.save_game()
-	get_tree().change_scene_to_file("res://scenes/training.tscn")
+	SceneManager.change_scene("res://scenes/training.tscn")
 
 
 func _on_timeline_ended() -> void:
@@ -197,4 +197,7 @@ func _on_cancel_load_button_pressed() -> void:
 	load_panel.visible = false
 
 func _on_home_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/start_menu.tscn")
+	SceneManager.change_scene("res://scenes/start_menu.tscn")
+
+func _on_items_pressed() -> void:
+	SceneManager.change_scene("res://scenes/inventory.tscn")

@@ -1,14 +1,63 @@
 [gd_scene format=3 uid="uid://ceoownhvpr4mm"]
 
+[ext_resource type="Script" uid="uid://dm5688hegrwju" path="res://scripts/inventory.gd" id="1_53g1v"]
 [ext_resource type="Texture2D" uid="uid://b3ociyqowf818" path="res://assets/scene-assets/inventory-assets/inventory 2.png" id="1_qw0r6"]
-[ext_resource type="PackedScene" uid="uid://dblo6ju3b5qw7" path="res://scenes/components/inventory_slot.tscn" id="2_hj2ta"]
+[ext_resource type="Texture2D" uid="uid://cm8di27mg5l7v" path="res://assets/scene-assets/training-assets/back-button.png" id="3_yyk2a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hj2ta"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uae8j"]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s887n"]
+bg_color = Color(0.44, 0.44, 0.44, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g71ie"]
+bg_color = Color(0.51, 0.51, 0.51, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qw0r6"]
 
 [node name="Inventory" type="Node2D" unique_id=364549078]
+script = ExtResource("1_53g1v")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=466642633]
 
@@ -44,25 +93,18 @@ size_flags_horizontal = 3
 texture = ExtResource("1_qw0r6")
 expand_mode = 2
 
-[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect" unique_id=1555410561]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-vertical = true
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/BoxContainer" unique_id=1730887046]
-layout_mode = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect" unique_id=1730887046]
+layout_mode = 0
+offset_right = 743.0
+offset_bottom = 83.0
 size_flags_vertical = 3
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/BoxContainer/VBoxContainer" unique_id=1835538344]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/VBoxContainer" unique_id=1835538344]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_hj2ta")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/BoxContainer/VBoxContainer/Panel" unique_id=2068517432]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/VBoxContainer/Panel" unique_id=2068517432]
 layout_mode = 0
 offset_top = 4.0
 offset_right = 743.0
@@ -71,7 +113,7 @@ size_flags_vertical = 3
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_right = 10
 
-[node name="HeaderText" type="Label" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/BoxContainer/VBoxContainer/Panel/MarginContainer" unique_id=1707829990]
+[node name="HeaderText" type="Label" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/VBoxContainer/Panel/MarginContainer" unique_id=1707829990]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -80,7 +122,7 @@ theme_override_font_sizes/font_size = 40
 text = "Inventory"
 horizontal_alignment = 1
 
-[node name="HeaderLine" type="ColorRect" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/BoxContainer/VBoxContainer/Panel" unique_id=1087179165]
+[node name="HeaderLine" type="ColorRect" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/VBoxContainer/Panel" unique_id=1087179165]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -95,12 +137,30 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_stretch_ratio = 0.01
 
-[node name="BoxContainer2" type="BoxContainer" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/BoxContainer" unique_id=511860456]
-layout_mode = 2
+[node name="BackButton" type="Button" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/VBoxContainer/Panel" unique_id=1187011035]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 28.0
+offset_top = 22.0
+offset_right = 78.0
+offset_bottom = 72.0
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_uae8j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s887n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g71ie")
+icon = ExtResource("3_yyk2a")
+icon_alignment = 1
+expand_icon = true
+
+[node name="ItemContainer" type="BoxContainer" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect" unique_id=511860456]
+layout_mode = 0
+offset_top = 108.0
+offset_right = 743.0
+offset_bottom = 629.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/BoxContainer/BoxContainer2" unique_id=1602435274]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/ItemContainer" unique_id=1602435274]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 24
@@ -108,72 +168,13 @@ theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 6
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/BoxContainer/BoxContainer2/MarginContainer" unique_id=1597143528]
+[node name="ItemGrid" type="GridContainer" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/ItemContainer/MarginContainer" unique_id=1597143528]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/h_separation = 12
 theme_override_constants/v_separation = 12
 columns = 5
-
-[node name="InventorySlot" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/BoxContainer/BoxContainer2/MarginContainer/GridContainer" unique_id=1498261110 instance=ExtResource("2_hj2ta")]
-layout_mode = 2
-
-[node name="InventorySlot2" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/BoxContainer/BoxContainer2/MarginContainer/GridContainer" unique_id=1861052143 instance=ExtResource("2_hj2ta")]
-layout_mode = 2
-
-[node name="InventorySlot3" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/BoxContainer/BoxContainer2/MarginContainer/GridContainer" unique_id=619848990 instance=ExtResource("2_hj2ta")]
-layout_mode = 2
-
-[node name="InventorySlot4" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/BoxContainer/BoxContainer2/MarginContainer/GridContainer" unique_id=497953757 instance=ExtResource("2_hj2ta")]
-layout_mode = 2
-
-[node name="InventorySlot5" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/BoxContainer/BoxContainer2/MarginContainer/GridContainer" unique_id=2046202454 instance=ExtResource("2_hj2ta")]
-layout_mode = 2
-
-[node name="InventorySlot6" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/BoxContainer/BoxContainer2/MarginContainer/GridContainer" unique_id=576427765 instance=ExtResource("2_hj2ta")]
-layout_mode = 2
-
-[node name="InventorySlot7" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/BoxContainer/BoxContainer2/MarginContainer/GridContainer" unique_id=1318506594 instance=ExtResource("2_hj2ta")]
-layout_mode = 2
-
-[node name="InventorySlot8" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/BoxContainer/BoxContainer2/MarginContainer/GridContainer" unique_id=2095526722 instance=ExtResource("2_hj2ta")]
-layout_mode = 2
-
-[node name="InventorySlot9" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/BoxContainer/BoxContainer2/MarginContainer/GridContainer" unique_id=1907724067 instance=ExtResource("2_hj2ta")]
-layout_mode = 2
-
-[node name="InventorySlot10" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/BoxContainer/BoxContainer2/MarginContainer/GridContainer" unique_id=1931902745 instance=ExtResource("2_hj2ta")]
-layout_mode = 2
-
-[node name="InventorySlot11" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/BoxContainer/BoxContainer2/MarginContainer/GridContainer" unique_id=350579084 instance=ExtResource("2_hj2ta")]
-layout_mode = 2
-
-[node name="InventorySlot12" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/BoxContainer/BoxContainer2/MarginContainer/GridContainer" unique_id=1794467331 instance=ExtResource("2_hj2ta")]
-layout_mode = 2
-
-[node name="InventorySlot13" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/BoxContainer/BoxContainer2/MarginContainer/GridContainer" unique_id=1413982010 instance=ExtResource("2_hj2ta")]
-layout_mode = 2
-
-[node name="InventorySlot14" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/BoxContainer/BoxContainer2/MarginContainer/GridContainer" unique_id=1538199139 instance=ExtResource("2_hj2ta")]
-layout_mode = 2
-
-[node name="InventorySlot15" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/BoxContainer/BoxContainer2/MarginContainer/GridContainer" unique_id=495082982 instance=ExtResource("2_hj2ta")]
-layout_mode = 2
-
-[node name="InventorySlot16" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/BoxContainer/BoxContainer2/MarginContainer/GridContainer" unique_id=665143569 instance=ExtResource("2_hj2ta")]
-layout_mode = 2
-
-[node name="InventorySlot17" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/BoxContainer/BoxContainer2/MarginContainer/GridContainer" unique_id=2085865699 instance=ExtResource("2_hj2ta")]
-layout_mode = 2
-
-[node name="InventorySlot18" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/BoxContainer/BoxContainer2/MarginContainer/GridContainer" unique_id=1292847673 instance=ExtResource("2_hj2ta")]
-layout_mode = 2
-
-[node name="InventorySlot19" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/BoxContainer/BoxContainer2/MarginContainer/GridContainer" unique_id=975505118 instance=ExtResource("2_hj2ta")]
-layout_mode = 2
-
-[node name="InventorySlot20" parent="CanvasLayer/Control/Panel/BoxContainer/TextureRect/BoxContainer/BoxContainer2/MarginContainer/GridContainer" unique_id=365526677 instance=ExtResource("2_hj2ta")]
-layout_mode = 2
 
 [node name="BoxContainer2" type="BoxContainer" parent="CanvasLayer/Control/Panel" unique_id=1058830739]
 layout_mode = 1
@@ -188,3 +189,5 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_qw0r6")
+
+[connection signal="pressed" from="CanvasLayer/Control/Panel/BoxContainer/TextureRect/VBoxContainer/Panel/BackButton" to="." method="_on_back_button_pressed"]

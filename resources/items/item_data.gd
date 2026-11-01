@@ -12,3 +12,5 @@ extends Resource
 	"others"
 ) var item_type: String = "others"
 @export var effects: Array[TrainingEffect] = []
+@export var stackable: bool = true
+@export var max_stack: int = 99
