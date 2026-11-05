@@ -64,6 +64,7 @@ func read_save(slot_id: int) -> Dictionary:
 	file.close()
 	if error != OK or not json.data is Dictionary:
 		return {}
+	print(json.data)
 	return json.data
 
 func load_game(slot_id: int) -> bool:

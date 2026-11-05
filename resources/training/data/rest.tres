@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://b5iiooh7yyht" path="res://resources/training/hunger_effect.gd" id="3_mtphx"]
 [ext_resource type="Script" uid="uid://cc4bixjycqq" path="res://resources/training/time_effect.gd" id="4_syvca"]
 
-[sub_resource type="Resource" id="Resource_bghp2"]
+[sub_resource type="Resource" id="Resource_6o3ud"]
 script = ExtResource("2_6o3ud")
 amount = 20
 metadata/_custom_type_script = "uid://ca2j435cdfijd"
@@ -26,5 +26,5 @@ script = ExtResource("2_tqwuu")
 id = &"rest"
 display_name = "Rest"
 energy_cost = -1
-effects = Array[ExtResource("1_5aba4")]([SubResource("Resource_bghp2"), SubResource("Resource_y28uv"), SubResource("Resource_pvn0f")])
+effects = Array[ExtResource("1_5aba4")]([SubResource("Resource_6o3ud"), SubResource("Resource_y28uv"), SubResource("Resource_pvn0f")])
 metadata/_custom_type_script = "uid://dncfhhtm0pq53"

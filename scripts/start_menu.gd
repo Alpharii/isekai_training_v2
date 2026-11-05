@@ -30,6 +30,7 @@ func _on_load_game_pressed() -> void:
 	refresh_save_list()
 
 func _on_load_slot_pressed(slot_id: int) -> void:
+	print(slot_id)
 	if not PlayerManager.load_game(slot_id):
 		push_warning("Failed to load slot %d." % slot_id)
 		return

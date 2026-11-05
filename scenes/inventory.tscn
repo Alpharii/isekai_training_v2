@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dm5688hegrwju" path="res://scripts/inventory.gd" id="1_53g1v"]
 [ext_resource type="Texture2D" uid="uid://b3ociyqowf818" path="res://assets/scene-assets/inventory-assets/inventory 2.png" id="1_qw0r6"]
 [ext_resource type="Texture2D" uid="uid://cm8di27mg5l7v" path="res://assets/scene-assets/training-assets/back-button.png" id="3_yyk2a"]
+[ext_resource type="Texture2D" uid="uid://cfqpo8ennj6r6" path="res://assets/images/items/potion.png" id="4_53g1v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hj2ta"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -55,6 +56,35 @@ expand_margin_right = 5.0
 expand_margin_bottom = 5.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qw0r6"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yyk2a"]
+bg_color = Color(0.32, 0.32, 0.32, 0.53333336)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_53g1v"]
+bg_color = Color(0.33, 0.33, 0.33, 0.3882353)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sr8g6"]
+bg_color = Color(0.43137255, 0.43137255, 0.43137255, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p7iul"]
+bg_color = Color(0.52, 0.52, 0.52, 0.3882353)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="Inventory" type="Node2D" unique_id=364549078]
 script = ExtResource("1_53g1v")
@@ -176,7 +206,7 @@ theme_override_constants/h_separation = 12
 theme_override_constants/v_separation = 12
 columns = 5
 
-[node name="BoxContainer2" type="BoxContainer" parent="CanvasLayer/Control/Panel" unique_id=1058830739]
+[node name="ItemDetailBox" type="BoxContainer" parent="CanvasLayer/Control/Panel" unique_id=1058830739]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -185,9 +215,129 @@ offset_left = 743.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/Panel/BoxContainer2" unique_id=477354963]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/Panel/ItemDetailBox" unique_id=477354963]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_qw0r6")
+
+[node name="ItemName" type="Label" parent="CanvasLayer/Control/Panel/ItemDetailBox/Panel" unique_id=1443971101]
+unique_name_in_owner = true
+layout_mode = 1
+offset_top = 17.0
+offset_right = 409.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 24
+text = "Item Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/Panel/ItemDetailBox/Panel" unique_id=816968960]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = -227.0
+offset_right = 99.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yyk2a")
+
+[node name="ItemTexture" type="TextureRect" parent="CanvasLayer/Control/Panel/ItemDetailBox/Panel/Panel" unique_id=298857284]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_53g1v")
+
+[node name="ItemQuantity" type="Label" parent="CanvasLayer/Control/Panel/ItemDetailBox/Panel/Panel" unique_id=1138312038]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -45.0
+offset_top = -47.0
+offset_right = -10.0
+offset_bottom = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "64"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Panel/ItemDetailBox/Panel" unique_id=1645915100]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -185.25
+offset_top = -339.0
+offset_right = 185.25
+offset_bottom = -91.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 20
+
+[node name="TypeLabel" type="Label" parent="CanvasLayer/Control/Panel/ItemDetailBox/Panel/VBoxContainer" unique_id=276205396]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Type : Others"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Panel/ItemDetailBox/Panel/VBoxContainer" unique_id=1476337012]
+layout_mode = 2
+
+[node name="DescriptionHeader" type="Label" parent="CanvasLayer/Control/Panel/ItemDetailBox/Panel/VBoxContainer/VBoxContainer" unique_id=1442453645]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Description :"
+
+[node name="DescriptionLabel" type="Label" parent="CanvasLayer/Control/Panel/ItemDetailBox/Panel/VBoxContainer/VBoxContainer" unique_id=2141477991]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Its a bread"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Control/Panel/ItemDetailBox/Panel/VBoxContainer" unique_id=1612325899]
+layout_mode = 2
+
+[node name="EffectsHeader" type="Label" parent="CanvasLayer/Control/Panel/ItemDetailBox/Panel/VBoxContainer/VBoxContainer2" unique_id=1403849537]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Effects :"
+
+[node name="EffectsLabel" type="Label" parent="CanvasLayer/Control/Panel/ItemDetailBox/Panel/VBoxContainer/VBoxContainer2" unique_id=1763999402]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "+ 5 Hunger"
+
+[node name="UseItemButton" type="Button" parent="CanvasLayer/Control/Panel/ItemDetailBox/Panel" unique_id=552553381]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -140.0
+offset_top = -74.0
+offset_right = 140.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_53g1v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sr8g6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p7iul")
+text = "Use Item"
 
 [connection signal="pressed" from="CanvasLayer/Control/Panel/BoxContainer/TextureRect/VBoxContainer/Panel/BackButton" to="." method="_on_back_button_pressed"]

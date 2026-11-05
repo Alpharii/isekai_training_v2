@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://ca2j435cdfijd" path="res://resources/training/energy_effect.gd" id="2_o630t"]
 [ext_resource type="Script" uid="uid://c0fhqvwjliqm" path="res://resources/items/item_data.gd" id="2_sgc2c"]
 [ext_resource type="Script" uid="uid://b5iiooh7yyht" path="res://resources/training/hunger_effect.gd" id="3_1cklu"]
+[ext_resource type="Script" uid="uid://dkjae38lb3ark" path="res://resources/training/stat_gain_effect.gd" id="4_1cklu"]
 [ext_resource type="Texture2D" uid="uid://di54mjcoiy1jv" path="res://assets/images/items/green_apple.png" id="5_flg5p"]
 
 [sub_resource type="Resource" id="Resource_x8cwa"]
@@ -16,6 +17,13 @@ script = ExtResource("3_1cklu")
 amount = 15
 metadata/_custom_type_script = "uid://b5iiooh7yyht"
 
+[sub_resource type="Resource" id="Resource_flg5p"]
+script = ExtResource("4_1cklu")
+stat_name = "magic"
+min_gain = 10
+use_mood_bonus = false
+metadata/_custom_type_script = "uid://dkjae38lb3ark"
+
 [resource]
 script = ExtResource("2_sgc2c")
 id = &"green_apple"
@@ -23,5 +31,5 @@ displayName = "Green Apple"
 description = "Apel Hijau"
 texture = ExtResource("5_flg5p")
 item_type = "consumable"
-effects = Array[ExtResource("1_7kjma")]([SubResource("Resource_x8cwa"), SubResource("Resource_tii6x")])
+effects = Array[ExtResource("1_7kjma")]([SubResource("Resource_x8cwa"), SubResource("Resource_tii6x"), SubResource("Resource_flg5p")])
 metadata/_custom_type_script = "uid://c0fhqvwjliqm"
